@@ -1,0 +1,20 @@
+{
+  "name": "nous-alexa",
+  "version": "1.0.0",
+  "description": "Alexa skill for Nous",
+  "author": "Bohui Moon @bohuim",
+  "license": "ISC",
+
+  "main": "index.js",
+
+  "dependencies": {
+    "alexa-app": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  },
+
+  "scripts": {
+    "lint": "$(npm bin)/eslint ."
+  }
+}

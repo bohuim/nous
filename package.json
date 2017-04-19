@@ -3,17 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "alexa-app-server": "^3.0.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "supervisor": "^0.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "surge": "npm run build && cd build && surge --domain nous.surge.sh"
+
+    "get-modules": "npm install && cd alexa/nous && npm install && cd -",
+    "supervisor": "$(npm bin)/supervisor",
+    "alexa": "supervisor alexa-server.js",
+    "surge": "npm run build && cd build && surge --domain nous.surge.sh && cd -"
   }
 }

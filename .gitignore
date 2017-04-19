@@ -6,7 +6,7 @@
 # npm & node
 .npm
 .node_repl_history
-/node_modules
+*node_modules*
 
 
 # build
