@@ -14,6 +14,7 @@ The react related files are at the upper-most level, with Alexa files under `/al
 
 ### Useful Scripts
 Run all scripts with `npm run <script>`
+- `get-modules` - runs `npm install` in the outter and `alexa/nous` directories
 - Web
     - `start` - dev site at `localhost:3000`
     - `surge` - build the site and trigger `surge` for domain `nous.surge.sh`
