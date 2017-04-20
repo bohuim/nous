@@ -4,16 +4,14 @@
   "description": "Alexa skill for Nous",
   "author": "Bohui Moon @bohuim",
   "license": "ISC",
-
   "main": "index.js",
-
   "dependencies": {
-    "alexa-app": "^4.0.0"
+    "alexa-app": "^4.0.0",
+    "pubnub": "^4.8.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0"
   },
-
   "scripts": {
     "lint": "$(npm bin)/eslint ."
   }

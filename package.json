@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "alexa-app-server": "^3.0.1",
+    "pubnub": "^4.8.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
@@ -16,7 +17,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-
     "get-modules": "npm install && cd alexa/nous && npm install && cd -",
     "supervisor": "$(npm bin)/supervisor",
     "alexa": "supervisor alexa-server.js",
