@@ -2,7 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import PubNub from 'pubnub'
 
-import './App.css'
+import './App.scss'
+import AppBar from './AppBar'
 import HomePage from './pages/home/HomePage'
 import SubmitPage from './pages/submit/SubmitPage'
 
@@ -37,9 +38,10 @@ class App extends React.Component
     render()
     {
         return (
-            <Router className='router'>
-                <div>
-                    {/* NAVBAR HERE */}
+            <Router>
+                <div className='App'>
+                    <AppBar />
+
                     <Route exact path='/' component={HomePage} />
                     <Route exact path='/submit' component={SubmitPage} />
                 </div>
