@@ -1,7 +1,10 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import PubNub from 'pubnub'
-import './App.css'
 
+import './App.css'
+import HomePage from './pages/home/HomePage'
+import SubmitPage from './pages/submit/SubmitPage'
 
 class App extends React.Component
 {
@@ -34,9 +37,13 @@ class App extends React.Component
     render()
     {
         return (
-            <div className="App">
-                <p>Connect status: {this.state.isConnected}</p>
-            </div>
+            <Router className='router'>
+                <div>
+                    {/* NAVBAR HERE */}
+                    <Route exact path='/' component={HomePage} />
+                    <Route exact path='/submit' component={SubmitPage} />
+                </div>
+            </Router>
         )
     }
 
