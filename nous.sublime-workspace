@@ -1,0 +1,1291 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"acti",
+				"activeClassName"
+			],
+			[
+				"stand",
+				"standbyState"
+			],
+			[
+				"get",
+				"getSession"
+			],
+			[
+				"pub",
+				"pubnub"
+			],
+			[
+				"mess",
+				"messageHandler"
+			],
+			[
+				"alex",
+				"Alexa"
+			],
+			[
+				"spa",
+				"space-between"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"nav",
+				"navUnpinned"
+			],
+			[
+				"eas",
+				"ease-in-out"
+			],
+			[
+				"menu",
+				"menuActive"
+			],
+			[
+				"he",
+				"headroom--pinned"
+			],
+			[
+				"cu",
+				"cursor"
+			],
+			[
+				"in",
+				"inactive"
+			],
+			[
+				"clas",
+				"className"
+			],
+			[
+				"bab",
+				"babel-plugin-root-import"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"tran",
+				"transition"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"header",
+				"headerStyle"
+			],
+			[
+				"lan",
+				"landingPage"
+			],
+			[
+				"sess",
+				"session_config"
+			],
+			[
+				"coo",
+				"cookieParser"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"Inte",
+				"IntegrityError"
+			],
+			[
+				"__",
+				"__init__"
+			],
+			[
+				"re",
+				"recipients"
+			],
+			[
+				"downlo",
+				"download_with_fid"
+			],
+			[
+				"rec",
+				"recipient"
+			],
+			[
+				"put_",
+				"put_shared"
+			],
+			[
+				"fid",
+				"fid_sign"
+			],
+			[
+				"sig",
+				"verify_sign"
+			],
+			[
+				"asym",
+				"asymmetric_decrypt"
+			],
+			[
+				"refer",
+				"referer_key"
+			],
+			[
+				"Int",
+				"IntegrityError"
+			],
+			[
+				"rf",
+				"referer_key"
+			],
+			[
+				"cre",
+				"creator_key"
+			],
+			[
+				"si",
+				"sign"
+			],
+			[
+				"recip",
+				"recipients"
+			],
+			[
+				"key",
+				"keys_c"
+			],
+			[
+				"reci",
+				"recipient"
+			],
+			[
+				"tre",
+				"tree_p"
+			],
+			[
+				"send",
+				"sender_key"
+			],
+			[
+				"mes",
+				"message"
+			],
+			[
+				"asy",
+				"asymmetric_encrypt"
+			],
+			[
+				"onw",
+				"owner_key"
+			],
+			[
+				"ver",
+				"verify_sign"
+			],
+			[
+				"veri",
+				"verify_hmac"
+			],
+			[
+				"private",
+				"private_key"
+			],
+			[
+				"very",
+				"verify_hmac"
+			],
+			[
+				"sym",
+				"symmetric_encrypt"
+			],
+			[
+				"cy",
+				"crypto"
+			],
+			[
+				"server",
+				"storage_server"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"by",
+				"by_user"
+			],
+			[
+				"by_user",
+				"by_user_key"
+			],
+			[
+				"to_use",
+				"to_user_key"
+			],
+			[
+				"to",
+				"to_user_key"
+			],
+			[
+				"as",
+				"asymmetric_sign"
+			],
+			[
+				"sor",
+				"storage_server"
+			],
+			[
+				"uer",
+				"username"
+			],
+			[
+				"cry",
+				"crypto"
+			],
+			[
+				"get_",
+				"get_public_key"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"message",
+				"message_authentication_code"
+			],
+			[
+				"so",
+				"storage_server"
+			],
+			[
+				"enc",
+				"asymmetric_encrypt"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"json",
+				"to_json_string"
+			],
+			[
+				"ae",
+				"aes_ctr_args"
+			],
+			[
+				"aes_",
+				"aes_ctr_args"
+			],
+			[
+				"a",
+				"aes_ctr"
+			],
+			[
+				"sy",
+				"symmetric_decrypt"
+			],
+			[
+				"aes",
+				"aes_key_c"
+			],
+			[
+				"pri",
+				"private_key"
+			],
+			[
+				"from",
+				"from_json_string"
+			],
+			[
+				"public",
+				"public_key"
+			],
+			[
+				"name",
+				"name_to_mode"
+			],
+			[
+				"pu",
+				"public_key"
+			],
+			[
+				"cipher",
+				"cipher_mode"
+			],
+			[
+				"publi",
+				"public_key"
+			],
+			[
+				"stor",
+				"storage_server"
+			],
+			[
+				"RECI",
+				"RECIPE_MENU"
+			],
+			[
+				"REC",
+				"RECIPE_MENU"
+			],
+			[
+				"main",
+				"mainState"
+			],
+			[
+				"KEY_",
+				"KEY_NAME"
+			],
+			[
+				"INPUT",
+				"INPUT_EXIT"
+			],
+			[
+				"pro",
+				"prompt"
+			],
+			[
+				"STATE",
+				"STATE_RECIPE"
+			],
+			[
+				"recipe",
+				"recipeState"
+			],
+			[
+				"MAIN",
+				"STATE_MAIN"
+			],
+			[
+				"Rec",
+				"Recipe"
+			],
+			[
+				"exp",
+				"expect"
+			],
+			[
+				"error",
+				"errorResponse"
+			],
+			[
+				"DB_",
+				"DB_ITEMS"
+			],
+			[
+				"agg",
+				"aggregate_blocks"
+			],
+			[
+				"reduce",
+				"reduceByKey"
+			],
+			[
+				"insert",
+				"insert_block"
+			],
+			[
+				"zero",
+				"zero_pad"
+			],
+			[
+				"im",
+				"imgsize"
+			],
+			[
+				"z",
+				"zeros"
+			],
+			[
+				"conv",
+				"convert_to_YCrCb"
+			],
+			[
+				"ch",
+				"channel"
+			],
+			[
+				"app",
+				"apply_transforms"
+			],
+			[
+				"block",
+				"block_index"
+			],
+			[
+				"con",
+				"convert_to_YCrCb"
+			],
+			[
+				"ima",
+				"image_collection"
+			],
+			[
+				"omp",
+				"omp_get_num_threads"
+			],
+			[
+				"omp_get",
+				"omp_get_num_threads"
+			],
+			[
+				"num",
+				"num_threads"
+			],
+			[
+				"pr",
+				"printf\tprintf …"
+			],
+			[
+				"un",
+				"unroll"
+			],
+			[
+				"_mm",
+				"_mm_storeu_si128"
+			],
+			[
+				"sq",
+				"sqDiff"
+			],
+			[
+				"box",
+				"boxColTail"
+			],
+			[
+				"fea",
+				"featureWidth"
+			],
+			[
+				"fe",
+				"featureHeight"
+			],
+			[
+				"dCol",
+				"dColL"
+			],
+			[
+				"dRo",
+				"dRowL"
+			],
+			[
+				"dRow",
+				"dRowU"
+			],
+			[
+				"image",
+				"imageWidth"
+			],
+			[
+				"minimu",
+				"mininumTaxiDifference"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 761,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/App.js",
+			"settings":
+			{
+				"buffer_size": 1668,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/AppBar.jsx",
+			"settings":
+			{
+				"buffer_size": 582,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/bohuim/dev/cal/cs160/prog/03/alexa/apps/recipes/index.js",
+			"settings":
+			{
+				"buffer_size": 13336,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "var request = require('request');\n \nvar registerEventHandlers = function (eventHandlers, skillContext)\n{\n    eventHandlers.onSessionStarted = function (sessionStartedRequest, session)\n    {\n        //if user said a one shot command that triggered an intent event,\n        //it will start a new session, and then we should avoid speaking too many words.\n        skillContext.needMoreHelp = false;\n    };\n    \n    eventHandlers.onLaunch = function (launchRequest, session, response)\n    {\n        var accessToken = session.user.accessToken;\n        console.log('Access Token=', accessToken);\n        \n        var speechOutput = \"\";\n        var name = \"\";\n        if(accessToken === null || accessToken === undefined)\n        { \n            response.tellWithLinkAccount('Please use the Alexa app to link your Amazon account to this skill.');\n        } \n        else\n        {\n            var url='https://api.amazon.com/user/profile?access_token=' + accessToken;\n            request(url, function(error, resp, body)\n            {\n                console.log(body);\n                if (resp.statusCode == 200)\n                {\n                    var profile = JSON.parse(body);\n                    speechOutput=\"Hello, \" + profile.name.split(\" \")[0] + \".\";\n                }\n                else\n                    console.log(error);\n\n                speechOutput += ' Welcome to Home Storage Pro, What can I do for you?';\n\n                var reprompt = ' What can I do for you?';\n                response.ask(speechOutput, reprompt);\n            });\n        }\n    }\n }\n exports.register = registerEventHandlers;",
+			"settings":
+			{
+				"buffer_size": 1613,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/App.css",
+			"settings":
+			{
+				"buffer_size": 338,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/AppBar.css",
+			"settings":
+			{
+				"buffer_size": 1116,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "s",
+		"selected_items":
+		[
+			[
+				"s",
+				"Set Syntax: Sass"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"Bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"bable",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"syntax bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"package",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packagecontrol: list",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax vu",
+				"Set Syntax: Vue Component"
+			],
+			[
+				"package reso",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 431.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/bohuim/dev/cal/cs160/nous",
+		"/Users/bohuim/dev/cal/cs160/nous/alexa",
+		"/Users/bohuim/dev/cal/cs160/nous/alexa/nous",
+		"/Users/bohuim/dev/cal/cs160/nous/src",
+		"/Users/bohuim/dev/cal/cs160/nous/src/pages",
+		"/Users/bohuim/dev/cal/cs160/nous/src/pages/submit"
+	],
+	"file_history":
+	[
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/html.js",
+		"/Users/bohuim/dev/cal/cs160/nous/src/pages/submit/QuestionForm.jsx",
+		"/Users/bohuim/dev/cal/cs160/nous/src/pages/submit/SubmitPage.jsx",
+		"/Users/bohuim/dev/cal/cs160/nous/src/index.js",
+		"/Users/bohuim/dev/cal/cs160/nous/public/index.html",
+		"/Users/bohuim/dev/cal/cs160/nous/src/components/QuestionForm.scss",
+		"/Users/bohuim/dev/cal/cs160/nous/src/pages/submit/SubmitPage.scss",
+		"/Users/bohuim/dev/cal/cs160/nous/src/AppBar.scss",
+		"/Users/bohuim/dev/cal/cs160/nous/src/App.scss",
+		"/Users/bohuim/dev/cal/cs160/nous/alexa/nous/index.js",
+		"/Users/bohuim/dev/cal/cs160/nous/src/pages/home/HomePage.jsx",
+		"/Users/bohuim/dev/cal/cs160/nous/src/components/QuestionForm.jsx",
+		"/Users/bohuim/dev/cal/cs160/nous/alexa/nous/package.json",
+		"/Users/bohuim/dev/cal/cs160/nous/README.md",
+		"/Users/bohuim/dev/cal/cs160/nous/.gitignore",
+		"/Users/bohuim/dev/cal/cs160/nous/alexa/nous/.eslintrc.json",
+		"/Users/bohuim/dev/cal/cs160/nous/src/App.js",
+		"/Users/bohuim/dev/cal/cs160/nous/alexa-server.js",
+		"/Users/bohuim/dev/cal/cs160/nous/.eslintrc.json",
+		"/Users/bohuim/dev/cal/cs160/nous/alexa/nous/.eslintrc.js",
+		"/Users/bohuim/dev/cal/cs160/prog/03/alexa/apps/recipes/index.js",
+		"/Users/bohuim/dev/cal/cs160/prog/03/alexa/apps/recipes/package.json",
+		"/Users/bohuim/dev/cal/cs160/prog/03/alexa/package.json",
+		"/Users/bohuim/dev/tutorial/alexa/apps/first-aid/index.js",
+		"/Users/bohuim/dev/cal/cs160/nous/src/App.test.js",
+		"/Users/bohuim/dev/cal/cs160/nous/build/index.html",
+		"/Users/bohuim/dev/cal/cs160/nous/nous/.gitignore",
+		"/Users/bohuim/.Trash/README.md",
+		"/Users/bohuim/dev/cal/cs160/nous/nous/README.md",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/utils/typography.js",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/components/Navbar.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/_template.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/components/_ActionCard.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/public/styles.css",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/public/index.html",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/components/_App.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/App.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/index.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/styles/navbar.scss",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/components/ActionCard.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/.gatsby-context.js",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/wrappers/md.js",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/_Navbar.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/navbar.html",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/styles/index.scss",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/styles/App.scss",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/node_modules/gatsby/dist/utils/babel-config.js",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/_navbar.jsx",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/.babelrc",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/css/markdown-styles.css",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/navbar.scss",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/index.js",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/wrappers/html.js",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/index.scss",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/config.toml",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/public/sass/index.html",
+		"/Users/bohuim/dev/cal/org/innod/aid/aid/pages/html.html",
+		"/Users/bohuim/dev/projects/quantvise/web/secret/google.json",
+		"/Users/bohuim/dev/projects/quantvise/web/public/index.html",
+		"/Users/bohuim/dev/projects/quantvise/web/index.html",
+		"/Users/bohuim/Library/Application Support/Sublime Text 3/Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
+		"/Users/bohuim/Library/Application Support/Sublime Text 3/Packages/Material Theme/schemes/Material-Theme.tmTheme",
+		"/Users/bohuim/Downloads/boxy-ocean-default.xml",
+		"/Users/bohuim/dev/projects/quantvise/web/quantvise-web.sublime-project",
+		"/Users/bohuim/dev/cal/cs161/proj/2/servers.py",
+		"/Users/bohuim/dev/cal/cs161/proj/2/base_client.py",
+		"/Users/bohuim/dev/cal/cs161/proj/2/util.py",
+		"/Users/bohuim/dev/cal/cs161/proj/2/crypto.py",
+		"/Users/bohuim/GDrive/Organizations/ASUC OTCO - Berkeley Mobile/Redesign 2017/specs.sketch",
+		"/Users/bohuim/dev/tutorial/Alexa/apps/first-aid/index.js",
+		"/Users/bohuim/dev/tutorial/Alexa/package.json",
+		"/Users/bohuim/dev/tutorial/Alexa/apps/first-aid/package.json",
+		"/Users/bohuim/Downloads/alexa-skills-kit-js-deprecated/samples/reindeerGames/src/index.js",
+		"/Users/bohuim/Library/Containers/com.agilebits.onepassword-osx/Container.plist",
+		"/Users/bohuim/Library/Preferences/2BUA8C4S2C.com.agilebits.onepassword-osx-helper.plist",
+		"/Applications/1Password.app/Contents/Library/LoginItems/2BUA8C4S2C.com.agilebits.onepassword-osx-helper.app/Contents/Resources/1PasswordAnywhere/1Password_agile_keychain.html",
+		"/Users/bohuim/Documents/License/license.dash-license",
+		"/Applications/Mission Control.app/Contents/MacOS/Mission Control",
+		"/Applications/1Password.app/Contents/Info.plist",
+		"/Users/bohuim/dev/cal/org/asuc/ios_swift/berkeleyMobileiOS/Storyboards/Dining.storyboard",
+		"/Users/bohuim/Downloads/test.py",
+		"/Users/bohuim/Downloads/dining_halls.json",
+		"/Users/bohuim/dev/cal/cs61a/proj/scheme/scheme.py",
+		"/Users/bohuim/dev/cal/cs61a/proj/scheme/scheme_reader.py",
+		"/Users/bohuim/dev/cal/cs61a/proj/scheme/buffer.py",
+		"/Users/bohuim/dev/cal/cs61c/labs/12/answers.txt",
+		"/Users/bohuim/dev/cal/cs61c/labs/11/wordcount.py",
+		"/Users/bohuim/dev/cal/cs61c/labs/11/docwordcount.py",
+		"/Users/bohuim/dev/cal/cs61c/labs/11/index.py",
+		"/Users/bohuim/dev/cal/cs61c/labs/*.py",
+		"/Users/bohuim/dev/cal/cs61c/labs/11/doriangray.txt",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/spark_image_compressor.py",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/helper_functions.py",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/constants.py",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/run_image_processor.py",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/image_diff.py",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/.gitignore",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/conf/log4j.properties",
+		"/Users/bohuim/dev/cal/cs61a/lab/14/lab14.py",
+		"/usr/local/Cellar/apache-spark/2.0.2/libexec/conf/log4j.properties.template",
+		"/usr/local/Cellar/apache-spark/2.0.2/libexec/conf/log4j.properties",
+		"/usr/local/Cellar/apache-spark/2.0.2/libexec/conf/log4.j.properties",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/helper_functions.pyc",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/MY.PARTNERS",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/spark_image_compressor.pyc",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/constants.pyc",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/test.sh",
+		"/Users/bohuim/dev/cal/cs61c/proj/5/wc",
+		"/Users/bohuim/dev/cal/cs61c/labs/09/Makefile",
+		"/Users/bohuim/dev/cal/cs61c/labs/09/sseTest.c",
+		"/Users/bohuim/dev/cal/cs61c/labs/09/sseTest.s",
+		"/Users/bohuim/dev/cal/cs61c/labs/09/answers.txt",
+		"/Users/bohuim/dev/cal/cs61c/labs/09/sum.c",
+		"/Users/bohuim/dev/cal/cs61c/labs/10/v_add.c",
+		"/Users/bohuim/dev/cal/cs61c/labs/10/dotp.c",
+		"/Users/bohuim/dev/cal/cs61c/labs/10/hello.c",
+		"/Users/bohuim/dev/cal/cs61c/labs/09/sum.o",
+		"/Users/bohuim/dev/cal/cs61a/proj/scheme_contest/scheme.py",
+		"/Users/bohuim/dev/cal/cs61a/proj/scheme_contest/scheme_primitives.py",
+		"/Users/bohuim/dev/cal/cs61a/proj/scheme_contest/contest.scm",
+		"/Users/bohuim/dev/cal/cs61a/proj/scheme/ucb.py",
+		"/Users/bohuim/dev/cal/cs61c/labs/10/answers.txt",
+		"/Users/bohuim/dev/cal/cs61c/proj/4/Makefile",
+		"/Users/bohuim/dev/cal/cs61c/labs/09/makefile",
+		"/Users/bohuim/dev/examples/OverlayTouchTest/OverlayTouchTest/PhantomScrollView.swift",
+		"/Users/bohuim/dev/cal/cs61c/proj/4/benchmark.c",
+		"/Users/bohuim/dev/cal/cs61c/proj/4/check.c",
+		"/Users/bohuim/dev/cal/cs61c/proj/4/.gitignore"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"SubmitPage",
+			"State",
+			"keepAlive",
+			"PN",
+			"public",
+			"public folder",
+			"#using-the-public",
+			"using the public",
+			"0.2s",
+			"LABEL",
+			"label",
+			"user",
+			"CSS",
+			"numb",
+			"CSS",
+			"#89DDFF",
+			"CSS",
+			"#C792EA",
+			"#C792E4",
+			"css",
+			"#c594c5",
+			"self.c(",
+			"self.c",
+			"hmac(",
+			"hmac(fid +",
+			"verify_hmac(fid +",
+			"verify_hmac(fid + ",
+			"alias + c",
+			"k_m",
+			"by_user",
+			"to_user",
+			"raise IntegrityError",
+			"value",
+			" name",
+			"name",
+			"crypto_hash",
+			"sha",
+			"pri_key",
+			"pub_key",
+			"signature",
+			"cipher",
+			"name_",
+			"crypto",
+			" cipher",
+			"cipher",
+			"val",
+			"RSA",
+			"SELECT",
+			"EXIT",
+			"FLOW",
+			"HELP",
+			"RECIPE",
+			"MAIN",
+			"KEY",
+			"STATE",
+			"INTENT",
+			"Input",
+			"INPUT",
+			"Input",
+			"INPUT",
+			"`",
+			"\"",
+			"KEY_",
+			"INPUT_",
+			" =",
+			"Intent",
+			"\"",
+			"console.log",
+			"KEY_DIRECTIONS",
+			"const",
+			"Const",
+			"const",
+			"steamed rice",
+			"copy",
+			"chapter",
+			"chapter 2",
+			"dst",
+			"channel",
+			"col",
+			"row",
+			"BLOCK",
+			"BLOCK_SIZE",
+			"channel",
+			"set",
+			"round",
+			"math",
+			"turtle",
+			"Began",
+			"boxX",
+			"boxY",
+			"difference",
+			"y",
+			"x",
+			"dy",
+			"dx",
+			"y",
+			"squaredDifference",
+			"left",
+			"i",
+			"x",
+			"rightY",
+			"rightX",
+			"leftX",
+			"leftY",
+			"dx",
+			"dy",
+			"squaredDifference",
+			"x",
+			"minimumDy",
+			"y",
+			"sqDiff",
+			"c3",
+			"c2",
+			"c1",
+			"r",
+			"col",
+			"row",
+			"rL",
+			"rightY",
+			"rightX",
+			"leftY",
+			"leftX",
+			"boxX",
+			"boxY",
+			"x ",
+			"x",
+			"y",
+			"Y"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								343,
+								343
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (NPM).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1668,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								135,
+								135
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/AppBar.jsx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 582,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								285,
+								285
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 31.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/bohuim/dev/cal/cs160/prog/03/alexa/apps/recipes/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13336,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3384.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								714,
+								714
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "src/App.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								241,
+								241
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 4
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/AppBar.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1116,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								232,
+								232
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 154.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "nous.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/dev/cal/cs161/proj/2/cs161-proj2.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 211.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

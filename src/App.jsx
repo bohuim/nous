@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import PubNub from 'pubnub'
 
-import './App.scss'
+import './App.css'
 import AppBar from './AppBar'
 import HomePage from './pages/home/HomePage'
 import SubmitPage from './pages/submit/SubmitPage'

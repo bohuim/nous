@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './SubmitPage.scss'
+import './SubmitPage.css'
 import QuestionForm from './QuestionForm'
 
 class SubmitPage extends React.Component

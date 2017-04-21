@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './QuestionForm.scss'
+import './QuestionForm.css'
 
 class QuestionForm extends React.Component
 {

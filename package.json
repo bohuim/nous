@@ -11,16 +11,29 @@
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5",
-    "supervisor": "^0.12.0"
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.2",
+    "react-transform-hmr": "^1.0.4",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
     "get-modules": "npm install && cd alexa/nous && npm install && cd -",
+    "webpack": "$(npm bin)/webpack",
+    "webpack-dev-server": "$(npm bin)/webpack-dev-server",
     "supervisor": "$(npm bin)/supervisor",
+    "build": "webpack -p --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.js",
     "alexa": "supervisor alexa-server.js",
     "surge": "npm run build && cd build && surge --domain nous.surge.sh && cd -"
   }
