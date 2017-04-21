@@ -14,3 +14,14 @@ a {
     text-decoration: none;
 }
 a:visited { color: inherit; }
+
+i {
+    cursor: pointer;
+    
+    display: block;
+    text-align: center;
+}
+
+.page {
+    padding: 24px 24px;
+}

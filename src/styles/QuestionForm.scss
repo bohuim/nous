@@ -1,0 +1,67 @@
+
+.QuestionForm {
+
+    $borderNormal: #BDBDBD;
+    $borderAccent1: #43A047;
+    $borderAccent2: #66BB6A;
+
+    position: relative;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+
+    > .toolbar {
+        $height: 40px;
+
+        width: 100%;
+        height: $height;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        > .title {
+            color: #424242;
+            padding-left: 4px;
+        }
+
+        > i { 
+            color: #757575;
+            &:hover { color: #e53935; }
+        }
+    }
+
+    > .input {
+        display: block;
+        box-sizing: border-box;
+
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        &:last-child { margin-bottom: 0px; }
+
+        color: #212121;
+        font-weight: 400;
+
+        border: none;
+        appearance: none;
+        box-shadow: none;
+    }
+
+    > textarea[name='question'] {
+        font-size: 16px;
+
+        border-radius: 5px;
+        border: 1px solid $borderNormal;
+        &:focus { border-color: $borderAccent1; }
+    }
+
+    > input[type='text'] {
+        font-size: 14px;
+
+        border-left: 2px solid $borderNormal;
+        &:focus { border-color: $borderAccent2; }
+    }
+}
