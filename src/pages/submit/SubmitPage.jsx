@@ -22,6 +22,11 @@ class SubmitPage extends React.Component
                 <div className='content'>
                     <h3>Submit New Questions</h3>
                     <QuestionForm />
+
+                    <div className='toolbar'>
+                        <button>Add another</button>
+                        <button>Submit</button>
+                    </div>
                 </div>           
             </div>
         )

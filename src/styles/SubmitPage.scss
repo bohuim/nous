@@ -13,4 +13,31 @@
         padding-left: 4px;
         margin-bottom: 16px;
     }
+
+    > .toolbar {
+        margin-top: 32px;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        button {
+            font-size: 14px;
+            font-weight: 400;
+            border-radius: 3px;
+            
+            padding: 10px 12px;
+
+            color: #81C784;
+            background-color: white; 
+            border: 1px solid #81C784;
+            transition: all 150ms ease-in;
+
+            &:hover {
+                color: white;
+                background-color: #4CAF50;
+                border: 1px solid #4CAF50;
+            }
+        }
+    }
 }
