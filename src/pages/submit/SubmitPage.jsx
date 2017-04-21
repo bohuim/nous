@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './SubmitPage.css'
+import 'styles/SubmitPage'
 import QuestionForm from './QuestionForm'
 
 class SubmitPage extends React.Component
@@ -9,7 +9,7 @@ class SubmitPage extends React.Component
     {
         return (
             <div className='SubmitPage'>
-                submit
+                
             </div>
         )
     }

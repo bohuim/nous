@@ -9,5 +9,8 @@ body, * {
     font-family: 'Roboto', 'Montserrat', 'Arial', sans-serif;
 }
 
-a { text-decoration: none; }
+a { 
+    color: inherit;
+    text-decoration: none;
+}
 a:visited { color: inherit; }

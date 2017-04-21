@@ -2,10 +2,10 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import PubNub from 'pubnub'
 
-import './App.css'
-import AppBar from './AppBar'
-import HomePage from './pages/home/HomePage'
-import SubmitPage from './pages/submit/SubmitPage'
+import 'styles/App'
+import AppBar from '~/AppBar'
+import HomePage from '~/pages/home/HomePage'
+import SubmitPage from '~/pages/submit/SubmitPage'
 
 class App extends React.Component
 {
@@ -43,7 +43,7 @@ class App extends React.Component
                     <AppBar />
 
                     <Route exact path='/' component={HomePage} />
-                    <Route exact path='/submit' component={SubmitPage} />
+                    <Route path='/submit' component={SubmitPage} />
                 </div>
             </Router>
         )

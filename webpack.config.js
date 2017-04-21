@@ -13,7 +13,8 @@ const devServerConfig = {
     hot: true,
 
     inline: true,
-    stats: 'normal'
+    stats: 'normal',
+    historyApiFallback: true
 }
 
 
@@ -51,13 +52,14 @@ module.exports = {
     resolve: {
         alias: {
             '/': path.resolve(''),
-            '~': path.resolve('src')
+            '~': path.resolve('src'),
+            'styles': path.resolve('src/styles')
         },
         modules: [
             path.resolve('src'),
             path.resolve('node_modules')
         ],
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.json', '.css', '.scss', '.sass']
     },
     module: {
         loaders: [
