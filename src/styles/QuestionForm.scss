@@ -5,7 +5,9 @@
     $borderAccent1: #43A047;
     $borderAccent2: #66BB6A;
 
+    display: block;
     position: relative;
+    margin-bottom: 40px;
 
     display: flex;
     flex-flow: column nowrap;

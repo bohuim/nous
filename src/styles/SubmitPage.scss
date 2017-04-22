@@ -1,7 +1,8 @@
 
-.SubmitPage > .content {
+.SubmitPage {
     
-    width: 560px;
+    width: 640px;
+    margin: 0px auto;
 
     > h3 {
         font-family: 'Roboto';
@@ -15,8 +16,6 @@
     }
 
     > .toolbar {
-        margin-top: 32px;
-
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;

@@ -10,7 +10,7 @@ class AppBar extends React.Component
     {
         return (
             <div className='AppBar'>
-                <NavLink to='/' exact='true' activeClassName='active' className='home'>
+                <NavLink to='/' exact={true} activeClassName='active' className='home'>
                     <p>Nous</p>
                 </NavLink>
 

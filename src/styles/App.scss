@@ -5,6 +5,7 @@
 body, * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 
     font-family: 'Roboto', 'Montserrat', 'Arial', sans-serif;
 }
@@ -35,5 +36,5 @@ i {
 }
 
 .page {
-    padding: 24px 24px;
+    padding: 40px 0px;
 }
