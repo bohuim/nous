@@ -3,6 +3,10 @@
 .DS_Store
 
 
+# sublime
+*.sublime-project
+*.sublime-workspace
+
 # npm & node
 .npm
 .node_repl_history
