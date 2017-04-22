@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 import 'styles/SubmitPage'
 import QuestionForm from './QuestionForm'
@@ -10,36 +11,47 @@ class SubmitPage extends React.Component
     {
         super(props)
 
-        this.addForm = this.addForm.bind(this)
-        this.removeForm = this.removeForm.bind(this)
-        this.submit = this.submit.bind(this)
-
-        this.key = 0
+        this.key = 1
         this.state = {
-            forms: [this.keys++]
+            data: [
+                {
+                    key: 0,
+                    question: '',
+                    categories: ''
+                }
+            ]
         }
     }
 
-    addForm()
+    add()
     {
         this.setState(prev => ({
-            forms: prev.forms.concat(this.key++)
+            data: prev.data.concat({
+                key: this.key++,
+                question: '',
+                categories: ''
+            })
         }))
     }
 
-    removeForm(index)
+    remove(index)
     {
-        const forms = this.state.forms
-        if (forms.length <= 1)
+        const data = this.state.data
+        if (data.length <= 1)
             return
 
-        forms.splice(index, 1)
-        this.setState({forms: forms})
+        data.splice(index, 1)
+        this.setState({data: data})
+    }
+
+    update(index, uid, val)
+    {
+        this.state.data[index][uid] = val
     }
 
     submit()
     {
-        console.log()
+        
     }
 
     render()
@@ -48,19 +60,20 @@ class SubmitPage extends React.Component
             <div className='SubmitPage page'>
                 <h3>Submit New Questions</h3>
 
-                <ul className='forms'>
-                    {this.state.forms.map((key, index) => 
+                <ul ref='formList' className='data'>
+                    {this.state.data.map((data, index) => 
                         <QuestionForm
-                            key={key}
+                            key={data.key}
                             index={index}
-                            removeCallback={this.removeForm}
+                            updateHandler={this.update.bind(this)}
+                            removeHanlder={this.remove.bind(this)}
                         />
                     )}
                 </ul>
 
                 <div className='toolbar'>
-                    <button onClick={this.addForm}>Add another</button>
-                    <button onClick={this.submit}>Submit</button>
+                    <button onClick={() => this.add()} >Add another</button>
+                    <button onClick={() => this.submit()} >Submit</button>
                 </div>
             </div>
         )

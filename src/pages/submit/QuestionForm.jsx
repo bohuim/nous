@@ -2,6 +2,9 @@ import React from 'react'
 
 import 'styles/QuestionForm'
 
+const questionPlaceholder = 'Type the question here...';
+const categoriesPlaceholder = 'Comma separated categories ex) general, chemistry, ...';
+
 /**
  <QuestionForm
     key={index}
@@ -12,12 +15,11 @@ import 'styles/QuestionForm'
 export default
 class QuestionForm extends React.Component
 {
-    placeholder = 'Type the question here...';
-
     render()
     {
         const index = this.props.index
-        const remove = this.props.removeCallback
+        const update = this.props.updateHandler
+        const remove = this.props.removeHandler
 
         return (
             <li className='QuestionForm'>
@@ -29,14 +31,16 @@ class QuestionForm extends React.Component
                 <textarea 
                     name='question'
                     className='input'
-                    placeholder={this.placeholder}
                     rows="8" cols="48"
+                    placeholder={questionPlaceholder}
+                    onChange={e => update(index, 'question', e.target.value)}
                 ></textarea>
 
                 <input 
                     type='text' 
                     className='input'
-                    placeholder='Comma separated categories ex) general, chemistry, ...'
+                    placeholder={categoriesPlaceholder}
+                    onChange={e => update(index, 'categories', e.target.value)}
                 />
             </li>
         )
