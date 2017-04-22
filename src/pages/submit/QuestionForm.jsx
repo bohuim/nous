@@ -21,14 +21,11 @@ class QuestionForm extends React.Component
 
     update()
     {
-        console.log('QuestionForm.update()')
         this.setState({index: this.props.protocol.index})
     }
 
     render()
     {
-        console.log('QuestionForm.render()')
-
         const protocol = this.props.protocol
         const index = this.state.index
 

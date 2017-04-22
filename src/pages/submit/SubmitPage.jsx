@@ -22,8 +22,6 @@ class SubmitPage extends React.Component
 
     newForm(index)
     {
-        console.log('SubmitPage.newForm()')
-
         const protocol = {
             index: index,
             render: null,
@@ -43,8 +41,6 @@ class SubmitPage extends React.Component
 
     addForm()
     {
-        console.log('SubmitPage.addForm()')
-
         this.setState(prev => ({
             forms: prev.forms.concat( [this.newForm(prev.forms.length)] )
         }))
@@ -52,8 +48,6 @@ class SubmitPage extends React.Component
 
     removeForm(i)
     {
-        console.log('SubmitPage.removeForm()')
-
         var forms = this.state.forms
         if (forms.length <= 1)
             return
@@ -71,8 +65,6 @@ class SubmitPage extends React.Component
 
     render()
     {
-        console.log('SubmitPage.render()')
-
         return (
             <div className='SubmitPage page'>
                 <h3>Submit New Questions</h3>
