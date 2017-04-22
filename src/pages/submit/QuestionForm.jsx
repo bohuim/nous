@@ -11,27 +11,36 @@ class QuestionForm extends React.Component
     {
         super(props)
         
-        this.remove = () => props.removeHandler(this.state.index)
-        this.state = {
-            index: 0
-        }
+        const protocol = props.protocol
+        protocol.update = this.update.bind(this)
 
-        console.log(this)
+        this.state = {
+            index: protocol.index
+        }
+    }
+
+    update()
+    {
+        console.log('QuestionForm.update()')
+        this.setState({index: this.props.protocol.index})
     }
 
     render()
     {
-        const name = 'question'
+        console.log('QuestionForm.render()')
+
+        const protocol = this.props.protocol
+        const index = this.state.index
 
         return (
             <li className='QuestionForm'>
                 <div className='toolbar'>
-                    <p className='title'>Question #{this.state.index + 1}</p>
-                    <i className='material-icons' onClick={this.remove}>clear</i>
+                    <p className='title'>Question #{index + 1}</p>
+                    <i className='material-icons' onClick={() => protocol.remove(index)}>clear</i>
                 </div>
 
                 <textarea 
-                    name={name}
+                    name='question'
                     className='input'
                     placeholder={this.placeholder}
                     rows="8" cols="48"

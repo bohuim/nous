@@ -14,6 +14,7 @@ class SubmitPage extends React.Component
         this.addForm = this.addForm.bind(this)
         this.removeForm = this.removeForm.bind(this)
 
+        this.counter = 0
         this.state = {
             forms: [this.newForm(0)]
         }
@@ -21,48 +22,63 @@ class SubmitPage extends React.Component
 
     newForm(index)
     {
+        console.log('SubmitPage.newForm()')
+
+        const protocol = {
+            index: index,
+            render: null,
+            remove: this.removeForm
+        }
+
         const form = (
             <QuestionForm
-                key={index}
-                removeHandler={this.removeForm}
+                key={this.counter}
+                protocol={protocol}
             />
         )
 
-        console.log(form)
-        return form
+        this.counter += 1
+        return [protocol, form]
     }
 
     addForm()
     {
+        console.log('SubmitPage.addForm()')
+
         this.setState(prev => ({
-            forms: prev.forms.concat( this.newForm(prev.forms.length) )
+            forms: prev.forms.concat( [this.newForm(prev.forms.length)] )
         }))
     }
 
     removeForm(i)
     {
-        const oldForms = this.state.forms
-        if (oldForms.length == 1)
+        console.log('SubmitPage.removeForm()')
+
+        var forms = this.state.forms
+        if (forms.length <= 1)
             return
 
-        console.log(`remove index: ${i}`)
+        forms = forms.filter(obj => obj[0].index !== i)
+        forms.forEach((obj, i) => { 
+            const protocol = obj[0]
+            protocol.index = i
 
-        const forms = oldForms.slice(i, i+1)
-        forms.forEach((form, i) => console.log(form))
-
-        console.log(`new forms: ${forms}`)
-
+            if (protocol.update)
+                protocol.update()
+        })
         this.setState({forms: forms})
     }
 
     render()
     {
+        console.log('SubmitPage.render()')
+
         return (
             <div className='SubmitPage page'>
                 <h3>Submit New Questions</h3>
 
                 <ul className='forms'>
-                    {this.state.forms}
+                    {this.state.forms.map(obj => obj[1])}
                 </ul>
 
                 <div className='toolbar'>
