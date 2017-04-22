@@ -14,7 +14,7 @@ class SubmitPage extends React.Component
         this.addForm = this.addForm.bind(this)
         this.removeForm = this.removeForm.bind(this)
 
-        this.counter = 0
+        this.key = 0
         this.state = {
             forms: [this.newForm(0)]
         }
@@ -22,45 +22,29 @@ class SubmitPage extends React.Component
 
     newForm(index)
     {
-        const protocol = {
-            index: index,
-            render: null,
-            remove: this.removeForm
+        return {
+            key: this.key++,
+            index: index
         }
-
-        const form = (
-            <QuestionForm
-                key={this.counter}
-                protocol={protocol}
-            />
-        )
-
-        this.counter += 1
-        return [protocol, form]
     }
 
     addForm()
     {
         this.setState(prev => ({
-            forms: prev.forms.concat( [this.newForm(prev.forms.length)] )
+            forms: prev.forms.concat( this.newForm(prev.forms.length) )
         }))
     }
 
-    removeForm(i)
+    removeForm(index)
     {
-        var forms = this.state.forms
+        const forms = this.state.forms
         if (forms.length <= 1)
             return
 
-        forms = forms.filter(obj => obj[0].index !== i)
-        forms.forEach((obj, i) => { 
-            const protocol = obj[0]
-            protocol.index = i
+        const newForms = forms.slice(0, index).concat( forms.splice(index+1) )
+        newForms.forEach((e, i) => { e.index = i })
 
-            if (protocol.update)
-                protocol.update()
-        })
-        this.setState({forms: forms})
+        this.setState({forms: newForms})
     }
 
     render()
@@ -70,7 +54,13 @@ class SubmitPage extends React.Component
                 <h3>Submit New Questions</h3>
 
                 <ul className='forms'>
-                    {this.state.forms.map(obj => obj[1])}
+                    {this.state.forms.map(form => 
+                        <QuestionForm
+                            key={form.key}
+                            index={form.index}
+                            removeCallback={this.removeForm}
+                        />
+                    )}
                 </ul>
 
                 <div className='toolbar'>

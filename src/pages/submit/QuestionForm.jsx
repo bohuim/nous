@@ -2,38 +2,28 @@ import React from 'react'
 
 import 'styles/QuestionForm'
 
+/**
+ <QuestionForm
+    key={index}
+    index={index}
+    removeCallback={removeCallback}
+ />
+ */
 export default
 class QuestionForm extends React.Component
 {
     placeholder = 'Type the question here...';
 
-    constructor(props)
-    {
-        super(props)
-        
-        const protocol = props.protocol
-        protocol.update = this.update.bind(this)
-
-        this.state = {
-            index: protocol.index
-        }
-    }
-
-    update()
-    {
-        this.setState({index: this.props.protocol.index})
-    }
-
     render()
     {
-        const protocol = this.props.protocol
-        const index = this.state.index
+        const index = this.props.index
+        const remove = this.props.removeCallback
 
         return (
             <li className='QuestionForm'>
                 <div className='toolbar'>
                     <p className='title'>Question #{index + 1}</p>
-                    <i className='material-icons' onClick={() => protocol.remove(index)}>clear</i>
+                    <i className='material-icons' onClick={() => remove(index)}>clear</i>
                 </div>
 
                 <textarea 
