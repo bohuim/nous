@@ -1,5 +1,6 @@
 import React from 'react'
 import { padStart } from 'lodash'
+import Pubnub from '~/penguin'
 
 import 'styles/InterviewPage'
 
@@ -23,7 +24,9 @@ class InterviewPage extends React.Component {
             <h2>{minThis}:{secThis} / {minTotal}:{secTotal}</h2>
             <h4>TOTAL</h4>
           </div>
-          <button onClick={ e => this.nextQuestion(e) }>{nextButton}</button>
+          {/*
+          <button onClick={ e => this.nextQuestion() }>{nextButton}</button>
+          */}
         </div>
       </div>
     )
@@ -39,6 +42,13 @@ class InterviewPage extends React.Component {
   }
 
   componentDidMount() {
+    Pubnub.addListener({
+      message : (message) => {
+        if (message.message.event === 'next') {
+          this.nextQuestion()
+        }
+      }
+    })
     this.interval = setInterval(function() {
       this.setState({
         currentTime : this.state.currentTime + 1,
@@ -51,7 +61,7 @@ class InterviewPage extends React.Component {
     clearInterval(this.interval)
   }
 
-  nextQuestion(event) {
+  nextQuestion() {
     if (this.state.question >= this.props.location.state.selectedQuestions.length) {
       this.props.history.push('/')
     } else {
