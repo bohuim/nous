@@ -1,6 +1,14 @@
 .InterviewPage {
+  position:relative;
   width:640px;
+  min-height:500px;
   margin:0px auto;
+
+  .footer {
+    position:absolute;
+    bottom:90px;
+    width:640px;
+  }
 
   .timer {
     margin-left:-43px;

@@ -1,20 +1,49 @@
 .HomePage {
+  position:relative;
   width:640px;
+  min-height:500px;
   margin:0px auto;
 
   $borderNormal: #BDBDBD;
   $borderAccent2: #66BB6A;
 
+  i.material-icons {
+    color:$borderNormal;
+  }
+
+  .submit-button {
+    float:right;
+    padding-left:35px;
+    height:40px;
+    margin-bottom:8px;
+
+    i.material-icons {
+      position:absolute;
+      margin-left:-28px;
+      margin-top:-3px;
+    }
+  }
+
   // borrowed this, for later
+
+  .search-icon {
+    position:absolute;
+    font-size:25px;
+    color:$borderNormal;
+    margin-top:52px;
+    margin-left:4px;
+    cursor:default;
+  }
 
   input {
     display: block;
     box-sizing: border-box;
 
     width: 100%;
+    margin-top:15px;
     padding: 8px;
-    margin-bottom: 16px;
-    &:last-child { margin-bottom: 0px; }
+    padding-left:30px;
+    margin-bottom:20px;
 
     color: #212121;
     font-weight: 400;
@@ -41,7 +70,7 @@
       border-color: $borderAccent2;
     }
 
-    &:nth-of-type(3) {
+    &:nth-of-type(3n) {
       margin-right:0px;
     }
 
@@ -60,6 +89,7 @@
 
   .question {
     padding:4px;
+    margin-bottom:10px;
     &.selected {
       background-color:lightgrey;
     }
@@ -87,6 +117,12 @@
   }
 
   .toolbar {
-    margin-top:auto;
+    position:absolute;
+    bottom:90px;
+    width:640px;
+
+    button.left {
+      margin-right:10px;
+    }
   }
 }

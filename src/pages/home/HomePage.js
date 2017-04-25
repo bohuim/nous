@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import request from 'superagent'
 import { groupBy, map, without } from 'lodash'
 
@@ -51,6 +52,13 @@ class HomePage extends React.Component {
 
     return (
       <div className='HomePage page'>
+        <NavLink to='/submit'>
+          <button className='submit-button'>
+            <i className='material-icons'>add</i>
+            Submit Questions
+          </button>
+        </NavLink>
+        <i className='material-icons search-icon'>search</i>
         <input
           placeholder="Search..."
           value={this.state.search}

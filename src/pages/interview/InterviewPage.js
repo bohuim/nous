@@ -17,12 +17,14 @@ class InterviewPage extends React.Component {
         <h1>
           {questions[this.state.question - 1]}
         </h1>
-        <div className='timer'>
-          <h4>THIS QUESTION</h4>
-          <h2>{minThis}:{secThis} / {minTotal}:{secTotal}</h2>
-          <h4>TOTAL</h4>
+        <div className='footer'>
+          <div className='timer'>
+            <h4>THIS QUESTION</h4>
+            <h2>{minThis}:{secThis} / {minTotal}:{secTotal}</h2>
+            <h4>TOTAL</h4>
+          </div>
+          <button onClick={ e => this.nextQuestion(e) }>{nextButton}</button>
         </div>
-        <button onClick={ e => this.nextQuestion(e) }>{nextButton}</button>
       </div>
     )
   }
