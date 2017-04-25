@@ -35,7 +35,7 @@
     "webpack-dev-server": "$(npm bin)/webpack-dev-server",
     "supervisor": "$(npm bin)/supervisor",
     "build": "webpack -p --config webpack.config.js",
-    "start": "webpack-dev-server --config webpack.config.js",
+    "start": "webpack-dev-server --https --config webpack.config.js",
     "alexa": "supervisor alexa-server.js",
     "surge": "npm run build && cd build && surge --domain nous.surge.sh && cd -"
   }
