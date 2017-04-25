@@ -11,13 +11,6 @@ class AppBar extends React.Component {
         <NavLink to='/' exact={true} activeClassName='active' className='home'>
           <p>Nous</p>
         </NavLink>
-
-        <NavLink to='/setup' activeClassName='active'>
-          <p>Start Interview</p>
-        </NavLink>
-        <NavLink to='/interview' activeClassName='active'>
-          <p>Interview</p>
-        </NavLink>
         <NavLink to='/submit' activeClassName='active'>
           <p>Submit Questions</p>
         </NavLink>

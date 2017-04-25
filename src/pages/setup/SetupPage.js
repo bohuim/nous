@@ -17,7 +17,7 @@ class SetupPage extends React.Component {
         </ul>
         <p>add random question</p>
         <p>randomize</p>
-        <button onClick={e => this.startInterview(e)}>Start</button>
+        <button onClick={e => this.startInterview(e)}>Start Interview</button>
       </div>
     )
   }

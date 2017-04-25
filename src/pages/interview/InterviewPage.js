@@ -6,15 +6,14 @@ import 'styles/InterviewPage'
 class InterviewPage extends React.Component {
   render() {
     let questions = this.props.location.state.selectedQuestions
-    let example = 'If you had to come up with a five point plan on dealing with a challenge in your life, what would the steps be?'
     let minThis = Math.floor(this.state.currentTime / 60)
     let secThis = padStart((this.state.currentTime % 60).toString(), 2, '0')
     let minTotal = Math.floor(this.state.totalTime / 60)
     let secTotal = padStart((this.state.totalTime % 60).toString(), 2, '0')
-
+    let nextButton = this.state.question >= questions.length ? 'Done' : 'Next'
     return (
       <div className='InterviewPage page'>
-        <h3>Question {this.state.question}</h3>
+        <h3>Question {this.state.question} / {questions.length}</h3>
         <h1>
           {questions[this.state.question - 1]}
         </h1>
@@ -23,7 +22,7 @@ class InterviewPage extends React.Component {
           <h2>{minThis}:{secThis} / {minTotal}:{secTotal}</h2>
           <h4>TOTAL</h4>
         </div>
-        <button onClick={ e => this.nextQuestion(e) }>Next</button>
+        <button onClick={ e => this.nextQuestion(e) }>{nextButton}</button>
       </div>
     )
   }
@@ -51,9 +50,13 @@ class InterviewPage extends React.Component {
   }
 
   nextQuestion(event) {
-    this.setState({
-      question : this.state.question + 1,
-      currentTime : 0})
+    if (this.state.question >= this.props.location.state.selectedQuestions.length) {
+      this.props.history.push('/')
+    } else {
+      this.setState({
+        question : this.state.question + 1,
+        currentTime : 0})
+    }
   }
 
 }

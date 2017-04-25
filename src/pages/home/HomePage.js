@@ -11,38 +11,52 @@ class HomePage extends React.Component {
     if (this.state.activeCategory) {
       content = map(this.state.categories[this.state.activeCategory], function(question) {
         let questionClass = 'question'
+        let icon = 'add'
         if (this.state.selectedQuestions.includes(question.Content)) {
           questionClass += ' selected'
+          icon = 'done'
         }
         return (
           <div className={questionClass} key={question.Content} onClick={e => this.selectQuestion(e, question.Content)}>
+            <i className='material-icons'>{icon}</i>
             <p>{question.Content}</p>
+            <div className='tagbar'>
+              <h4>Tagged</h4> #{question.Category}
+            </div>
           </div>
         )
       }.bind(this))
-      content.push(
-        <div className='toolbar' key='toolbar'>
-          <button className='left' onClick={e => this.goBack(e)}>Back</button>
-          <button className='right' onClick={e => this.goInterview(e)}>Done ({this.state.selectedQuestions.length} selected)</button>
-        </div>)
 
     } else if (this.state.categories) {
       content = map(this.state.categories, function(questions, category) {
         return (
           <div className='category' key={category} onClick={e => this.loadCategory(e, category)}>
+            <i className='material-icons'>add</i>
             <h3>#{category}</h3>
             <h4>{questions.length} questions</h4>
           </div>
         )
       }.bind(this))
     }
+    let toolbar = ''
+    if (this.state.categories && (this.state.activeCategory || this.state.selectedQuestions.length > 0)) {
+      toolbar = (
+        <div className='toolbar' key='toolbar'>
+          {this.state.activeCategory ?
+          <button className='left' onClick={e => this.goBack(e)}>Back</button> : '' }
+          <button className='left' onClick={e => this.resetSelections(e)}>Reset</button>
+          <button className='right' onClick={e => this.goInterview(e)}>Done ({this.state.selectedQuestions.length} selected)</button>
+        </div>)
+    }
+
     return (
       <div className='HomePage page'>
         <input
-          placeholder="search..."
+          placeholder="Search..."
           value={this.state.search}
           onChange={e => this.setState({ search : e.target.value })}/>
         {content}
+        {toolbar}
       </div>
     )
   }
@@ -73,6 +87,12 @@ class HomePage extends React.Component {
       search : '#' + category.toLowerCase() })
   }
 
+  resetSelections(event) {
+    this.setState({
+      selectedQuestions : []
+    })
+  }
+
   goBack(event) {
     this.setState({
       activeCategory : '',
@@ -81,7 +101,7 @@ class HomePage extends React.Component {
   }
 
   goInterview(event) {
-    this.props.history.push('/setup', { selectedQuestions : this.state.selectedQuestions })
+    this.props.history.push('/interview', { selectedQuestions : this.state.selectedQuestions })
   }
 
   selectQuestion(event, question) {

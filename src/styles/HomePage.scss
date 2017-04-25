@@ -30,7 +30,8 @@
   .category {
     display:inline-block;
     width:200px;
-    padding-bottom:20px;
+    padding:4px;
+    padding-bottom:30px;
     border-bottom:2px $borderNormal solid;
     margin-bottom:20px;
     margin-right:20px;
@@ -51,11 +52,29 @@
     h4 {
       color:black;
     }
+
+    .material-icons {
+      float:right;
+    }
   }
 
   .question {
+    padding:4px;
     &.selected {
       background-color:lightgrey;
+    }
+
+    .tagbar {
+      clear:both;
+      padding-top:4px;
+      text-align:right;
+      text-transform:lowercase;
+      font-size:14px;
+    }
+
+    .material-icons {
+      float:right;
+      margin-right:-3px;
     }
   }
 
@@ -65,5 +84,9 @@
 
   button.right {
     float:right;
+  }
+
+  .toolbar {
+    margin-top:auto;
   }
 }
