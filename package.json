@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "alexa-app-server": "^3.0.1",
+    "lodash": "^4.17.0",
     "pubnub": "^4.8.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
-    "react-router-dom": "^4.1.1"
+    "react-router-dom": "^4.1.1",
+    "superagent": "^3.5.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
