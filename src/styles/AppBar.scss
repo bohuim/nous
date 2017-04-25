@@ -26,7 +26,7 @@
         flex-flow: column nowrap;
         justify-content: flex-end;
 
-        p { margin-bottom: 20px; }
+        p { margin-bottom: 12px; }
 
         &:last-child { margin-right: 0px; }
         &:after {
@@ -56,6 +56,24 @@
         margin-left: 16px;
         margin-right: 20px;
 
-        p { margin-bottom: 16px; }
+        p { margin-bottom: 8px; }
+    }
+
+    > a.login {
+        width: 152px;
+        height: 36px;
+
+        align-self: center;
+        margin: 0px 16px 0px auto;
+
+        border-radius: 3px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('../static/login_normal.png');
+
+        &:active {
+            background-image: url('../static/login_down.png');            
+        }
+        &:hover:after { height: 0px; }
     }
 }

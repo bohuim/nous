@@ -11,7 +11,12 @@ class AppBar extends React.Component {
         <NavLink to='/' exact={true} activeClassName='active' className='home'>
           <p>Nous</p>
         </NavLink>
+        <a className='login' onClick={() => this.auth()}></a>
       </div>
     )
+  }
+
+  auth() {
+    amazon.Login.authorize({scope: 'profile'}, this.props.authHandler)
   }
 }
