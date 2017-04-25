@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import request from 'superagent'
+import { Link, NavLink } from 'react-router-dom'
 
 import 'styles/SubmitPage'
 import QuestionForm from './QuestionForm'
@@ -23,7 +24,12 @@ class SubmitPage extends React.Component {
 
         <div className='toolbar'>
           <button onClick={() => this.add()} >Add another</button>
-          <button onClick={() => this.submit()} >Submit</button>
+          <NavLink to='/'>
+            <button>
+              Back
+            </button>
+          </NavLink>
+        <button onClick={() => this.submit()} >Submit</button>
         </div>
       </div>
     )

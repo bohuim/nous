@@ -110,6 +110,10 @@ class HomePage extends React.Component {
   }
 
   goInterview(event) {
+    if (this.state.selectedQuestions.length == 0) {
+      alert("please add at least one question before starting interview!");
+      return;
+    }
     this.props.history.push('/interview', { selectedQuestions : this.state.selectedQuestions })
     Pubnub.publish({ 'channel' : 'nous', 'message' : { 'event' : 'setup', 'questions' : this.state.selectedQuestions}}, function(status, error) {
       console.log(status)
