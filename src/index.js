@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className='App'>
-          <AppBar />
+          <AppBar authHandler={this.authHandler} />
 
           <Route exact path='/' component={HomePage} />
           <Route path='/setup' component={SetupPage} />
@@ -38,13 +38,18 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.pubnub.addListener({
-        message: this.messageHandler,
-        status: this.connectHandler
-    })
-    this.pubnub.subscribe({
-      channels: ['nous-alexa']
-    })
+    window.onAmazonLoginReady = () => { amazon.Login.setClientId('amzn1.application-oa2-client.719fc6d00eeb472398cf7aadc73cf21d') }
+    require('./amazon-login')
+  }
+
+  authHandler = (response) => {
+    if (response.error) {
+      console.log(`Error while getting user profile: ${response.error}`)
+      return
+    }
+
+    const token = response.access_token
+    
   }
 
   // pubnub stuff

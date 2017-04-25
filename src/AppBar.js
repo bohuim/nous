@@ -21,7 +21,13 @@ class AppBar extends React.Component {
         <NavLink to='/submit' activeClassName='active'>
           <p>Submit Questions</p>
         </NavLink>
+
+        <a className='login' onClick={() => this.auth()}></a>
       </div>
     )
+  }
+
+  auth() {
+    amazon.Login.authorize({scope: 'profile'}, this.props.authHandler)
   }
 }
