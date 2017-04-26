@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import request from 'superagent'
 import { groupBy, map, without } from 'lodash'
-import Pubnub from '~/penguin'
+import pubnub from '~/PubNubClient'
 
 import 'styles/HomePage'
 
@@ -115,9 +115,9 @@ class HomePage extends React.Component {
       return;
     }
     this.props.history.push('/interview', { selectedQuestions : this.state.selectedQuestions })
-    Pubnub.publish({
-      'channels': ['nous'], 
-      'message' : {
+    pubnub.publish({
+      'channel': 'nous', 
+      'message': {
         'event': 'setup',
         'questions': this.state.selectedQuestions
       }}, 

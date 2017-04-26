@@ -1,6 +1,6 @@
 import React from 'react'
 import { padStart } from 'lodash'
-import Pubnub from '~/penguin'
+import pubnub from '~/PubNubClient'
 
 import 'styles/InterviewPage'
 
@@ -42,7 +42,7 @@ class InterviewPage extends React.Component {
   }
 
   componentDidMount() {
-    Pubnub.addListener({
+    pubnub.addListener({
       message : (message) => {
         if (message.message.event === 'next') {
           this.nextQuestion()
