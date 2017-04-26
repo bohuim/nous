@@ -115,9 +115,15 @@ class HomePage extends React.Component {
       return;
     }
     this.props.history.push('/interview', { selectedQuestions : this.state.selectedQuestions })
-    Pubnub.publish({ 'channel' : 'nous', 'message' : { 'event' : 'setup', 'questions' : this.state.selectedQuestions}}, function(status, error) {
-      console.log(status)
-      console.log(error)
+    Pubnub.publish({
+      'channels': ['nous'], 
+      'message' : {
+        'event': 'setup',
+        'questions': this.state.selectedQuestions
+      }}, 
+      function(status, error) {
+        console.log(status)
+        console.log(error)
     })
   }
 
