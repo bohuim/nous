@@ -1,0 +1,15 @@
+
+$mobile-cutoff: 519px;
+$mobile-portrait:  '(orientation: portrait)  and (max-width:  #{$mobile-cutoff})';
+$mobile-landscape: '(orientation: landscape) and (max-height: #{$mobile-cutoff})';
+$mobile: $mobile-portrait, $mobile-landscape;
+
+$tablet-cutoff: 520px;
+$tablet-portrait:  '(orientation: portrait)  and (min-width:  #{$tablet-cutoff})';
+$tablet-landscape: '(orientation: landscape) and (min-height: #{$tablet-cutoff})';
+$tablet: $tablet-portrait, $tablet-landscape;
+
+$desktop-cutoff: 1200px;
+$desktop-portrait:  '(orientation: portrait)  and (min-height:  #{$desktop-cutoff})';
+$desktop-landscape: '(orientation: landscape) and (min-width: #{$desktop-cutoff})';
+$desktop: $desktop-portrait, $desktop-landscape;

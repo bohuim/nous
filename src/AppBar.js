@@ -5,14 +5,46 @@ import 'styles/AppBar'
 
 export default
 class AppBar extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {showMenu: false}
+  }
+
+  toggleMenu() {
+    this.setState(prev => ({showMenu: !prev.showMenu}))
+  }
+
+  delegate(f) {
+    this.setState({showMenu: false})
+    f()
+  }
+
   render() {
+    const profile = this.props.profile
+    const show = this.state.showMenu
+
+    const right_item = !profile ?
+      (<a className='login' onClick={() => this.delegate(this.props.login)}></a>) : 
+      (
+        <div className='profile'>
+          <p className='name' onClick={() => this.toggleMenu()}>
+            <span>{profile.Name}</span>
+            <i className='material-icons'>{`arrow_drop_${show ? 'up' : 'down'}`}</i>
+          </p>
+
+          <ul className={'menu' + (this.state.showMenu ? ' show' : '')}>
+            <li className='logout' onClick={() => this.delegate(this.props.logout)}>Logout</li>
+          </ul>
+        </div>
+      )
+
     return (
       <div className='AppBar'>
-        <NavLink to='/' exact={true} activeClassName='active' className='home'>
-          <p>Nous</p>
-        </NavLink>
-
-        <a className='login' onClick={this.props.login}></a>
+        <div className='content'>
+          <NavLink to='/' exact={true} activeClassName='active'>Nous</NavLink>
+          {right_item}
+        </div>
       </div>
     )
   }

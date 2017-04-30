@@ -67,6 +67,7 @@ class App extends React.Component {
       if (response.error)
         return console.log('Error while getting user profile: ', response.error)
 
+      console.log(response.profile)
       this.setState({profile: response.profile})
     })
   }

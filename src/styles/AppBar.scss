@@ -1,79 +1,123 @@
+@import 'index';
+
+$accent_red: #EC407A;
 
 .AppBar {
     width: 100%;
-    height: 50px;
 
-    color: #424242; // gray800
-    background-color: #F5F5F5; // gray50
+    color: #424242;
+    background-color: #F5F5F5;
 
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
+    > .content { height: 100%; }
+}
 
-    > a {
-        display: block;
-        position: relative;
+@media #{$desktop}
+{
+    .AppBar {
+        height: 72px;
+    }
 
-        height: 100%;
-        padding: 0px 16px;
-        margin-right: 8px;
-
-        font-size: 16px;
-        font-weight: 400;
-        font-family: 'Roboto';
-
+    .AppBar > .content
+    {
         display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-end;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
 
-        p { margin-bottom: 12px; }
+        a {
+            height: 100%;
+            padding: 0px 16px;
+            position: relative;
+            
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
 
-        &:last-child { margin-right: 0px; }
-        &:after {
+            font-weight: 400;
+            font-size: 28px;
+            font-family: 'Montserrat';
+        }
+        a:after {
             content: '';
             display: block;
-
             width: 100%;
-            height: 0px;
 
             left: 0px;
             bottom: 0px;
             position: absolute;
-            background-color: #EC407A;
-            transition: height 0.1s ease-out;
+            background-color: $accent_red;
+
+            height: 0px;
+            transition: height 150ms ease-out;
         }
-        &:hover:after, &.active:after {
-            height: 3px;
+        a:hover:after { height: 3px; }
+
+        a.login {
+            width: 152px;
+            height: 36px;
+            margin: 0px 16px 0px auto;
+
+            border-radius: 3px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url('../static/login_normal.png');
+
+            &:active { background-image: url('../static/login_down.png'); }
+            &:hover:after { height: 0px; }
         }
     }
 
-    > a.home {
-        font-size: 28px;
-        font-weight: 400;
-        font-family: 'Montserrat';
+    .AppBar .profile
+    {
+        width: 120px;
+        position: relative;
 
-        padding: 0px 16px;
-        margin-left: 16px;
-        margin-right: 20px;
+        .name {
+            position: relative;
+            top: 4px;
 
-        p { margin-bottom: 8px; }
-    }
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
 
-    > a.login {
-        width: 152px;
-        height: 36px;
-
-        align-self: center;
-        margin: 0px 16px 0px auto;
-
-        border-radius: 3px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-image: url('../static/login_normal.png');
-
-        &:active {
-            background-image: url('../static/login_down.png');            
+            cursor: pointer;
+            * {
+                $size: 24px;
+                height: $size;
+                line-height: $size;
+            }
         }
-        &:hover:after { height: 0px; }
+        
+        .menu {
+            display: none;
+            width: 100%;
+
+            top: 32px;
+            position: absolute;
+
+            padding: 6px 0px;
+
+            border-radius: 5px;
+            border: 1px solid #EEEEEE;
+            background-color: white;
+
+            li {
+                height: 32px;
+                cursor: pointer;
+
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+
+                transition: all 100ms ease-out;
+            }
+
+            li.logout:hover {
+                color: white;
+                background-color: #ef5350;
+            }
+        }
+        .menu.show { display: block; }
     }
 }
