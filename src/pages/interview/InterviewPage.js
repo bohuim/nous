@@ -7,7 +7,7 @@ import AppBar from '~/AppBar'
 
 class InterviewPage extends React.Component {
   render() {
-    let questions = this.props.location.state.selectedQuestions
+    let questions = this.props.selectedQuestions
     let minThis = Math.floor(this.state.currentTime / 60)
     let secThis = padStart((this.state.currentTime % 60).toString(), 2, '0')
     let minTotal = Math.floor(this.state.totalTime / 60)
@@ -67,7 +67,7 @@ class InterviewPage extends React.Component {
   }
 
   nextQuestion() {
-    if (this.state.question >= this.props.location.state.selectedQuestions.length) {
+    if (this.state.question >= this.props.selectedQuestions.length) {
       this.props.history.push('/')
     } else {
       this.setState({
