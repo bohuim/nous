@@ -111,7 +111,7 @@ class HomePage extends React.Component {
       alert("please add at least one question before starting interview!");
       return;
     }
-    
+
     this.props.history.push('/setup')
     pubnub.publish({
       channel: profile.aaid,

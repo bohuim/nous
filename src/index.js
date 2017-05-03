@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import PubNub from 'pubnub'
-import createBrowserHistory from 'history/createBrowserHistory'
 
 import 'styles/App'
 import AppBar from '~/AppBar'
@@ -36,27 +35,27 @@ class App extends React.Component {
   }
 
   render() {
-    let browserHistory = createBrowserHistory()
     return (
-      <Router history={browserHistory}>
+      <Router>
         <div className='App'>
           <Sidebar />
-          <Route exact path='/' render={() =>
+          <Route exact path='/' render={(props) =>
             <HomePage authHandler={this.authHandler}
               selectedQuestions={this.state.selectedQuestions}
               updateQuestions={this.updateQuestions}
-              history={browserHistory} />} />
-          <Route path='/setup' render={() =>
+              {...props} />} />
+          <Route path='/setup' render={(props) =>
             <SetupPage authHandler={this.authHandler}
               selectedQuestions={this.state.selectedQuestions}
               updateQuestions={this.updateQuestions}
-              history={browserHistory} />} />
-          <Route path='/interview' render={() =>
+              {...props} />} />
+          <Route path='/interview' render={(props) =>
             <InterviewPage authHandler={this.authHandler}
-              history={browserHistory} />} />
-          <Route path='/submit' render={() =>
+              selectedQuestions={this.state.selectedQuestions}
+              {...props} />} />
+          <Route path='/submit' render={(props) =>
             <SubmitPage authHandler={this.authHandler}
-              history={browserHistory} />} />
+              {...props} />} />
         </div>
       </Router>
     )
