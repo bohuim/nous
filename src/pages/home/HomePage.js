@@ -5,16 +5,18 @@ import { groupBy, map, without } from 'lodash'
 import pubnub from '~/PubNubClient'
 
 import 'styles/HomePage'
+import AppBar from '~/AppBar'
 
 class HomePage extends React.Component {
   render() {
+    console.log(this)
     // yes, i probably should've done this with more components, sue me.
     let content = ''
     if (this.state.activeCategory) {
       content = map(this.state.categories[this.state.activeCategory], function(question) {
         let questionClass = 'question'
         let icon = 'add'
-        if (this.state.selectedQuestions.includes(question.Content)) {
+        if (this.props.selectedQuestions.includes(question.Content)) {
           questionClass += ' selected'
           icon = 'done'
         }
@@ -41,31 +43,29 @@ class HomePage extends React.Component {
       }.bind(this))
     }
     let toolbar = ''
-    if (this.state.categories && (this.state.activeCategory || this.state.selectedQuestions.length > 0)) {
+    if (this.state.categories && (this.state.activeCategory || this.props.selectedQuestions.length > 0)) {
       toolbar = (
         <div className='toolbar' key='toolbar'>
           {this.state.activeCategory ?
           <button className='left' onClick={e => this.goBack(e)}>Back</button> : '' }
           <button className='left' onClick={e => this.resetSelections(e)}>Reset</button>
-          <button className='right' onClick={e => this.goInterview(e)}>Done ({this.state.selectedQuestions.length} selected)</button>
+          <button className='right' onClick={e => this.goInterview(e)}>Done ({this.props.selectedQuestions.length} selected)</button>
         </div>)
     }
 
     return (
-      <div className='HomePage page'>
-        <NavLink to='/submit'>
-          <button className='submit-button'>
-            <i className='material-icons'>add</i>
-            Submit Questions
-          </button>
-        </NavLink>
-        <i className='material-icons search-icon'>search</i>
-        <input
-          placeholder="Search..."
-          value={this.state.search}
-          onChange={e => this.setState({ search : e.target.value })}/>
-        {content}
-        {toolbar}
+      <div className='content'>
+        <AppBar header='Browse Questions & Categories'
+          authHandler={this.props.authHandler} />
+        <div className='HomePage page'>
+          <i className='material-icons search-icon'>search</i>
+          <input
+            placeholder="Search..."
+            value={this.state.search}
+            onChange={e => this.setState({ search : e.target.value })}/>
+          {content}
+          {toolbar}
+        </div>
       </div>
     )
   }
@@ -75,8 +75,7 @@ class HomePage extends React.Component {
     this.state = {
       categories : [],
       activeCategory : '',
-      search : '',
-      selectedQuestions : []
+      search : ''
     }
   }
 
@@ -97,9 +96,7 @@ class HomePage extends React.Component {
   }
 
   resetSelections(event) {
-    this.setState({
-      selectedQuestions : []
-    })
+    this.props.updateQuestions([])
   }
 
   goBack(event) {
@@ -110,26 +107,18 @@ class HomePage extends React.Component {
   }
 
   goInterview(event) {
-    if (this.state.selectedQuestions.length == 0) {
-      alert("please add at least one question before starting interview!")
-      return
+    if (this.props.selectedQuestions.length == 0) {
+      alert("please add at least one question before starting interview!");
+      return;
     }
-
-    const profile = this.props.profile
-    if (!profile) {
-      alert('Please login before proceeding to an interview.')
-      return
-    }
-
-    console.log('Publishing on channel: ', profile.aaid)
-
-    this.props.history.push('/interview', { selectedQuestions : this.state.selectedQuestions })
+    
+    this.props.history.push('/setup')
     pubnub.publish({
       channel: profile.aaid,
       message: {
         event: 'setup',
-        questions: this.state.selectedQuestions
-      }}, 
+        questions: this.props.selectedQuestions
+      }},
       function(status, error) {
         console.log(status)
         console.log(error)
@@ -137,10 +126,10 @@ class HomePage extends React.Component {
   }
 
   selectQuestion(event, question) {
-    if (this.state.selectedQuestions.includes(question)) {
-      this.setState({ selectedQuestions : without(this.state.selectedQuestions, question)})
+    if (this.props.selectedQuestions.includes(question)) {
+      this.props.updateQuestions(without(this.props.selectedQuestions, question))
     } else {
-      this.setState({ selectedQuestions : this.state.selectedQuestions.concat(question) })
+      this.props.updateQuestions(this.props.selectedQuestions.concat(question))
     }
   }
 }

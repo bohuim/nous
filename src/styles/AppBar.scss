@@ -1,8 +1,29 @@
-@import 'index';
-
-$accent_red: #EC407A;
 
 .AppBar {
+  width:100%;
+  height:70px;
+  padding:15px 20px;
+  border-bottom:1px #ddd solid;
+
+  .header {
+    display:inline-block;
+    height:40px;
+    line-height:40px;
+  }
+
+  .login {
+    background-color:#FFB300;
+    border-radius:3px;
+    height:40px;
+    padding:12px 15px;
+    float:right;
+    color:white;
+    font-size:14px;
+    cursor:pointer;
+  }
+}
+
+/*
     width: 100%;
 
     color: #424242;
@@ -113,11 +134,17 @@ $accent_red: #EC407A;
                 transition: all 100ms ease-out;
             }
 
+<<<<<<< HEAD
             li.logout:hover {
                 color: white;
                 background-color: #ef5350;
             }
+=======
+        &:active {
+            background-image: url('../static/login_down.png');
+>>>>>>> started working on a draft with the sidebar layout - not complete.
         }
         .menu.show { display: block; }
     }
 }
+*/

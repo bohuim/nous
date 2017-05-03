@@ -5,31 +5,36 @@ import { Link, NavLink } from 'react-router-dom'
 
 import 'styles/SubmitPage'
 import QuestionForm from './QuestionForm'
+import AppBar from '~/AppBar'
 
 export default
 class SubmitPage extends React.Component {
   render() {
     return (
-      <div className='SubmitPage page'>
-        <h3>Submit New Questions</h3>
-        <ul ref='formList' className='data'>
-          {this.state.data.map((data, index) =>
-            <QuestionForm
-              key={data.key}
-              index={index}
-              updateHandler={this.update.bind(this)}
-              removeHandler={this.remove.bind(this)} />
-          )}
-        </ul>
+      <div className='content'>
+        <AppBar header='Submit New Questions'
+          authHandler={this.props.authHandler} />
+        <div className='SubmitPage page'>
+          <h3>Submit New Questions</h3>
+          <ul ref='formList' className='data'>
+            {this.state.data.map((data, index) =>
+              <QuestionForm
+                key={data.key}
+                index={index}
+                updateHandler={this.update.bind(this)}
+                removeHandler={this.remove.bind(this)} />
+            )}
+          </ul>
 
-        <div className='toolbar'>
-          <button onClick={() => this.add()} >Add another</button>
-          <NavLink to='/'>
-            <button>
-              Back
-            </button>
-          </NavLink>
-        <button onClick={() => this.submit()} >Submit</button>
+          <div className='toolbar'>
+            <button onClick={() => this.add()} >Add another</button>
+            <NavLink to='/'>
+              <button>
+                Back
+              </button>
+            </NavLink>
+          <button onClick={() => this.submit()} >Submit</button>
+          </div>
         </div>
       </div>
     )

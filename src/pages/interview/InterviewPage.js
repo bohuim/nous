@@ -3,6 +3,7 @@ import { padStart } from 'lodash'
 import pubnub from '~/PubNubClient'
 
 import 'styles/InterviewPage'
+import AppBar from '~/AppBar'
 
 class InterviewPage extends React.Component {
   render() {
@@ -13,20 +14,24 @@ class InterviewPage extends React.Component {
     let secTotal = padStart((this.state.totalTime % 60).toString(), 2, '0')
     let nextButton = this.state.question >= questions.length ? 'Done' : 'Next'
     return (
-      <div className='InterviewPage page'>
-        <h3>Question {this.state.question} / {questions.length}</h3>
-        <h1>
-          {questions[this.state.question - 1]}
-        </h1>
-        <div className='footer'>
-          <div className='timer'>
-            <h4>THIS QUESTION</h4>
-            <h2>{minThis}:{secThis} / {minTotal}:{secTotal}</h2>
-            <h4>TOTAL</h4>
+      <div className='content'>
+        <AppBar header='Mock Interview'
+          authHandler={this.props.authHandler} />
+        <div className='InterviewPage page'>
+          <h3>Question {this.state.question} / {questions.length}</h3>
+          <h1>
+            {questions[this.state.question - 1]}
+          </h1>
+          <div className='footer'>
+            <div className='timer'>
+              <h4>THIS QUESTION</h4>
+              <h2>{minThis}:{secThis} / {minTotal}:{secTotal}</h2>
+              <h4>TOTAL</h4>
+            </div>
+            {/*
+            <button onClick={ e => this.nextQuestion() }>{nextButton}</button>
+            */}
           </div>
-          {/*
-          <button onClick={ e => this.nextQuestion() }>{nextButton}</button>
-          */}
         </div>
       </div>
     )

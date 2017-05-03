@@ -41,10 +41,8 @@ class AppBar extends React.Component {
 
     return (
       <div className='AppBar'>
-        <div className='content'>
-          <NavLink to='/' exact={true} activeClassName='active'>Nous</NavLink>
-          {right_item}
-        </div>
+        <div className='header'>{this.props.header}</div>
+        <a className='login' onClick={() => this.auth()}>Amazon Login</a>
       </div>
     )
   }
