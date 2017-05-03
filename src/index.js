@@ -32,14 +32,16 @@ class App extends React.Component {
   }
 
   render() {
+    const profile = this.state.profile
+
     return (
       <Router>
         <div className='App'>
           <AppBar login   = {() => this.login()} 
                   logout  = {() => this.logout()}
-                  profile = {this.state.profile} />
+                  profile = {profile} />
 
-          <Route exact path='/'     component={HomePage}      />
+          <Route exact path='/'     render={props => <HomePage {...props} profile={profile} />} />
           <Route path='/setup'      component={SetupPage}     />
           <Route path='/interview'  component={InterviewPage} />
           <Route path='/submit'     component={SubmitPage}    />
@@ -67,8 +69,13 @@ class App extends React.Component {
       if (response.error)
         return console.log('Error while getting user profile: ', response.error)
 
-      console.log(response.profile)
-      this.setState({profile: response.profile})
+      const profile = {
+          aaid: response.profile.CustomerId,
+          name: response.profile.Name,
+          email: response.profile.PrimaryEmail
+      }
+      console.log('profile: ', profile)
+      this.setState({profile: profile})
     })
   }
 }

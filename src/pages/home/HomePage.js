@@ -111,12 +111,21 @@ class HomePage extends React.Component {
 
   goInterview(event) {
     if (this.state.selectedQuestions.length == 0) {
-      alert("please add at least one question before starting interview!");
-      return;
+      alert("please add at least one question before starting interview!")
+      return
     }
+
+    const profile = this.props.profile
+    if (!profile) {
+      alert('Please login before proceeding to an interview.')
+      return
+    }
+
+    console.log('Publishing on channel: ', profile.aaid)
+
     this.props.history.push('/interview', { selectedQuestions : this.state.selectedQuestions })
     pubnub.publish({
-      channel: 'nous',
+      channel: profile.aaid,
       message: {
         event: 'setup',
         questions: this.state.selectedQuestions

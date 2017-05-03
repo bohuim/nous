@@ -29,7 +29,7 @@ class AppBar extends React.Component {
       (
         <div className='profile'>
           <p className='name' onClick={() => this.toggleMenu()}>
-            <span>{profile.Name}</span>
+            <span>{profile.name}</span>
             <i className='material-icons'>{`arrow_drop_${show ? 'up' : 'down'}`}</i>
           </p>
 
