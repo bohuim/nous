@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-import 'styles/AppBar'
+// styles
+import './AppBar.scss'
 
 export default
 class AppBar extends React.Component {

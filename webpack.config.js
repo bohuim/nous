@@ -5,7 +5,8 @@ const webpack = require('webpack');
 // ====================
 // Dev
 // ====================
-const DEV = (process.env.NODE_ENV === "development");
+const PROD = (process.env.NODE_ENV === "production");
+const DEV = !PROD;
 const sourceMap = DEV ? 'cheap-module-source-map' : false;
 
 const devServerConfig = {
@@ -21,9 +22,31 @@ const devServerConfig = {
 // ====================
 // Plugins
 // ====================
+const styleLoader = {
+    loader: 'style-loader',
+    options: { sourceMap: true }
+}
+
+const cssLoader = {
+    loader: 'css-loader',
+    options: {}
+}
+
+const sassLoader = {
+    loader: 'sass-loader',
+    options: {
+        sourceMap: true,
+        includePaths: [
+            path.resolve('src'),
+            path.resolve('src/styles'),
+            path.resolve('src/partials')
+        ]
+    }
+}
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
+    filename: 'styles.css',
     disable: DEV
 });
 
@@ -62,23 +85,29 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json', '.css', '.scss', '.sass']
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: ['babel-loader']
+                loader: 'babel-loader'
             },
             {
                 test: /\.(scss|sass)$/,
-                loader: ['style-loader', 'css-loader', 'sass-loader']
+                use: ExtractTextPlugin.extract({
+                    fallback: styleLoader,
+                    use: [cssLoader, sassLoader]
+                })
             },
             {
                 test: /\.css$/,
-                loader: ['style-loader', 'css-loader']
+                use: ExtractTextPlugin.extract({
+                    fallback: styleLoader,
+                    use: [cssLoader]
+                })
             },
             {
                 test: /\.(png|jpg|jpeg|gif|woff)$/, 
-                loader: ['file-loader']
+                loader: 'file-loader'
             }
         ]
     },

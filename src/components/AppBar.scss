@@ -1,3 +1,4 @@
+@import 'media';
 
 .AppBar {
   width:100%;
@@ -32,7 +33,7 @@
     > .content { height: 100%; }
 }
 
-@media #{$desktop}
+@media {$desktop}
 {
     .AppBar {
         height: 72px;

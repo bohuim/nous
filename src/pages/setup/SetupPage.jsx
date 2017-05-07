@@ -1,9 +1,13 @@
 import React from 'react'
 import { map } from 'lodash'
 
-import 'styles/SetupPage'
-import AppBar from '~/AppBar'
+// components
+import AppBar from '~/components/AppBar'
 
+// styles
+import './SetupPage.scss'
+
+export default
 class SetupPage extends React.Component {
   render() {
     return (
@@ -31,5 +35,3 @@ class SetupPage extends React.Component {
     this.props.history.push('/interview', { selectedQuestions : this.props.selectedQuestions })
   }
 }
-
-export default SetupPage

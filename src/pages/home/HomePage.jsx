@@ -1,12 +1,16 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import request from 'superagent'
+import pubnub from '~/utils/pubnub'
+import { NavLink } from 'react-router-dom'
 import { groupBy, map, without } from 'lodash'
-import pubnub from '~/PubNubClient'
 
-import 'styles/HomePage'
-import AppBar from '~/AppBar'
+// components
+import AppBar from '~/components/AppBar'
 
+// styles
+import './HomePage.scss'
+
+export default
 class HomePage extends React.Component {
   render() {
     console.log(this)
@@ -133,5 +137,3 @@ class HomePage extends React.Component {
     }
   }
 }
-
-export default HomePage

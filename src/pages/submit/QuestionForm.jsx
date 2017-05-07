@@ -1,16 +1,15 @@
 import React from 'react'
 
-import 'styles/QuestionForm'
+// styles
+import './QuestionForm.scss'
 
 const questionPlaceholder = 'Type the question here...';
 const categoriesPlaceholder = 'Comma separated categories ex) general, chemistry, ...';
 
 /**
- <QuestionForm
-    key={index}
-    index={index}
-    removeCallback={removeCallback}
- />
+ <QuestionForm key={index}
+               index={index}
+               removeCallback={removeCallback} />
  */
 export default
 class QuestionForm extends React.Component {

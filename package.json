@@ -33,9 +33,9 @@
   },
   "scripts": {
     "get-modules": "npm install && cd alexa/nous && npm install && cd -",
-    "webpack": "$(npm bin)/webpack",
-    "webpack-dev-server": "$(npm bin)/webpack-dev-server",
-    "supervisor": "$(npm bin)/supervisor",
+    "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server",
+    "supervisor": "supervisor",
     "build": "webpack -p --config webpack.config.js",
     "start": "webpack-dev-server --https --config webpack.config.js",
     "alexa": "supervisor alexa-server.js",

@@ -1,11 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import request from 'superagent'
 import { Link, NavLink } from 'react-router-dom'
 
-import 'styles/SubmitPage'
-import QuestionForm from './QuestionForm'
-import AppBar from '~/AppBar'
+// components
+import AppBar from '~/components/AppBar'
+import QuestionForm from './QuestionForm.scss'
+
+// styles
+import './SubmitPage.scss'
 
 export default
 class SubmitPage extends React.Component {

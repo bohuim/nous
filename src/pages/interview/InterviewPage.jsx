@@ -1,9 +1,12 @@
 import React from 'react'
 import { padStart } from 'lodash'
-import pubnub from '~/PubNubClient'
+import pubnub from '~/utils/pubnub'
 
-import 'styles/InterviewPage'
-import AppBar from '~/AppBar'
+// components
+import AppBar from '~/components/AppBar'
+
+// styles
+import './InterviewPage.scss'
 
 class InterviewPage extends React.Component {
   render() {
