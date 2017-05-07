@@ -1,5 +1,6 @@
 @import 'media';
 @import 'mixin';
+@import 'colors';
 
 @media #{$desktop}
 {
@@ -9,7 +10,7 @@
         @include flexbox(column, nowrap, flex-start, center);
 
         color: white;
-        background-color: #F06292;
+        background-color: $color_primary;
     }
 
     .logo {
@@ -37,7 +38,7 @@
 
             &:global(.active) {
                 border-radius: 3px;
-                background-color: #EC407A;
+                background-color: $color_primary_darken;
             }
         }
 

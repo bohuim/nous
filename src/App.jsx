@@ -1,8 +1,9 @@
 import React from 'react'
 import Cookies from 'js-cookie'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 // components
+import Login        from '~/pages/Login'
 import AppBar        from '~/components/AppBar'
 import SideBar       from '~/components/SideBar'
 import HomePage      from '~/pages/home/HomePage'
@@ -19,37 +20,26 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div styleName='app'>
-          <SideBar />
-
-          <Switch>
-            <Route exact path='/' render={(props) =>
-              <HomePage authHandler={this.authHandler}
-                selectedQuestions={this.state.selectedQuestions}
-                updateQuestions={this.updateQuestions}
-                {...props} />} />
-            <Route path='/setup' render={(props) =>
-              <SetupPage authHandler={this.authHandler}
-                selectedQuestions={this.state.selectedQuestions}
-                updateQuestions={this.updateQuestions}
-                {...props} />} />
-            <Route path='/interview' render={(props) =>
-              <InterviewPage authHandler={this.authHandler}
-                selectedQuestions={this.state.selectedQuestions}
-                {...props} />} />
-            <Route path='/submit' render={(props) =>
-              <SubmitPage authHandler={this.authHandler}
-                {...props} />} />
-          </Switch>
-        </div>
+      <div styleName='app'>
+        {this.state.user ? null : <Redirect to='/login' />}
+        <Switch>
+          <Route path='/login' render={() => this.state.user ? <Redirect to='/browse' /> : <Login callback={this.login} />} />
+          <Route path='/browse' render={() => <div>browse</div>} />
+        </Switch>
+      </div>
       </Router>
     )
   }
 
   constructor(props) {
     super(props)
+
+    this.login = this.login.bind(this)
+    this.logout = this.login.bind(this)
+    this.fetchProfile = this.fetchProfile.bind(this)
+
     this.state = {
-      profile: null,
+      user: null,
       selectedQuestions : []
     }
   }
@@ -60,10 +50,10 @@ class App extends React.Component {
       amazon.Login.setUseCookie(true)
     }
     require('./utils/amazon-login')
-
+    
     const token = Cookies.get('amazon_Login_accessToken')
     if (token)
-      this.getProfile(token)
+      this.fetchProfile(token)
   }
 
   updateQuestions = (questions) => {
@@ -71,31 +61,35 @@ class App extends React.Component {
   }
 
   login() {
-    amazon.Login.authorize({scope: 'profile'}, (response) => {
+    const options = {
+      popup: true,
+      scope: 'profile'
+    }
+    amazon.Login.authorize(options, (response) => {
       if (response.error)
         return console.log('Error while getting user access token: ', response.error)
 
-      this.getProfile(response.access_token)
+      this.fetchProfile(response.access_token)
     })
   }
 
   logout() {
     amazon.Login.logout()
-    this.setState({profile: null})
+    this.setState({user: null})
   }
 
-  getProfile(token) {
+  fetchProfile(token) {
     amazon.Login.retrieveProfile(token, (response) => {
       if (response.error)
         return console.log('Error while getting user profile: ', response.error)
 
-      const profile = {
+      const user = {
           aaid: response.profile.CustomerId,
           name: response.profile.Name,
           email: response.profile.PrimaryEmail
       }
-      console.log('profile: ', profile)
-      this.setState({profile: profile})
+      console.log('user: ', user)
+      this.setState({user: user})
     })
   }
 }
