@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 // components
 import AppBar        from '~/components/AppBar'
-import Sidebar       from '~/components/SideBar'
+import SideBar       from '~/components/SideBar'
 import HomePage      from '~/pages/home/HomePage'
 import SetupPage     from '~/pages/setup/SetupPage'
 import InterviewPage from '~/pages/interview/InterviewPage'
@@ -16,24 +16,11 @@ import './App.scss'
 // this is a very cheap way to deal with the appbar - hopefully it'll get fixed later?
 // but right now i don't feel like dealing with react-router to get text to show up.
 class App extends React.Component {
-
-  componentDidMount() {
-    window.onAmazonLoginReady = () => { 
-      amazon.Login.setClientId('amzn1.application-oa2-client.719fc6d00eeb472398cf7aadc73cf21d') 
-      amazon.Login.setUseCookie(true)
-    }
-    require('./utils/amazon-login')
-
-    const token = Cookies.get('amazon_Login_accessToken')
-    if (token)
-      this.getProfile(token)
-  }
-
   render() {
     return (
       <Router>
         <div className='App'>
-          <Sidebar />
+          <SideBar />
           <Route exact path='/' render={(props) =>
             <HomePage authHandler={this.authHandler}
               selectedQuestions={this.state.selectedQuestions}
@@ -62,6 +49,18 @@ class App extends React.Component {
       profile: null,
       selectedQuestions : []
     }
+  }
+
+  componentDidMount() {
+    window.onAmazonLoginReady = () => { 
+      amazon.Login.setClientId('amzn1.application-oa2-client.719fc6d00eeb472398cf7aadc73cf21d') 
+      amazon.Login.setUseCookie(true)
+    }
+    require('./utils/amazon-login')
+
+    const token = Cookies.get('amazon_Login_accessToken')
+    if (token)
+      this.getProfile(token)
   }
 
   updateQuestions = (questions) => {

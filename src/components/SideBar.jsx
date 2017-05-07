@@ -2,13 +2,13 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 // styles
-import './Sidebar.scss'
+import './SideBar.scss'
 
 export default
-class Sidebar extends React.Component {
+class SideBar extends React.Component {
   render() {
     return (
-      <div className='Sidebar'>
+      <div className='SideBar'>
         <div className='logo'>nous</div>
         <ul>
           <NavLink to='/' exact={true} activeClassName='active'>
