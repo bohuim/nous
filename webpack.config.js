@@ -29,7 +29,11 @@ const styleLoader = {
 
 const cssLoader = {
     loader: 'css-loader',
-    options: {}
+    options: {
+        importLoader: 1,
+        modules: true,
+        localIdentName: '[path]___[name]__[local]___[hash:base64:5]'
+    }
 }
 
 const sassLoader = {
@@ -62,7 +66,10 @@ const HMR = new webpack.HotModuleReplacementPlugin();
 // ====================
 // Webpack
 // ====================
+const context = path.resolve(__dirname)
+
 module.exports = {
+    context: context,
     entry: [
         'webpack-dev-server/client?http://localhost:' + devServerConfig.port,
         'webpack/hot/only-dev-server',
@@ -89,7 +96,17 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                options: {
+                    plugins:
+                    [
+                        ["react-css-modules", {
+                            context: context,
+                            webpackHotModuleReloading: true,
+                            filetypes: { '.scss': 'postcss-scss' }
+                        }]
+                    ]
+                }
             },
             {
                 test: /\.(scss|sass)$/,
