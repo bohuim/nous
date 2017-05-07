@@ -1,46 +1,92 @@
-.SideBar {
-  display:table-cell;
-  width:185px;
-  padding:5px;
-  height:100%;
-  background-color:#F06292;
-  color:white;
+@import 'media';
+@import 'mixin';
 
-  .logo {
-    margin-top:5px;
-    text-align:center;
-    font:40px 'Roboto';
-  }
+@media #{$desktop}
+{
+    .sidebar {
+        width: 220px;
+        height: 100%;
+        @include flexbox(column, nowrap, flex-start, center);
 
-  ul {
-    margin-top:30px;
-  }
-
-  a {
-    li {
-      width:100%;
-      margin-top:8px; margin-bottom:8px;
-      padding:8px 3px;
-      border-radius:3px;
-
-      .material-icons {
-        display:inline-block;
-        width:30px;
-        margin-right:4px;
-        vertical-align:middle;
-      }
-
-      label {
-        display:inline-block;
-        line-height:24px;
-        vertical-align:middle;
-      }
+        color: white;
+        background-color: #F06292;
     }
 
-    &.active {
-      li {
-        background-color:#EC407A;
-      }
+    .logo {
+        font-size: 40px;
+        margin-top: 16px;
     }
-  }
+
+    ul {
+        width: 100%;
+    }
+
+    .link {
+        height: 36px;
+        padding: 0px 8px;
+        
+        a {
+            height: 100%;
+            display: block;
+            @include flexbox(row, nowrap, flex-start, center);
+
+            :global(.active) {
+                border-radius: 3px;
+                background-color: #EC407A;
+            }
+        }
+
+        i { font-size: 26px; }
+        label {
+            margin-left: 16px;
+            font-size: 18px;
+        }
+    }
 }
+
+// .SideBar {
+//   display:table-cell;
+//   width:185px;
+//   padding:5px;
+//   height:100%;
+//   background-color:#F06292;
+//   color:white;
+
+//   .logo {
+//     margin-top:5px;
+//     text-align:center;
+//     font:40px 'Roboto';
+//   }
+
+//   ul {
+//     margin-top:30px;
+//   }
+
+//   a {
+//     li {
+//       width:100%;
+//       margin-top:8px; margin-bottom:8px;
+//       padding:8px 3px;
+//       border-radius:3px;
+
+//       .material-icons {
+//         display:inline-block;
+//         width:30px;
+//         margin-right:4px;
+//         vertical-align:middle;
+//       }
+
+//       label {
+//         display:inline-block;
+//         line-height:24px;
+//         vertical-align:middle;
+//       }
+//     }
+
+//     &.active {
+//       li {
+//         background-color:#EC407A;
+//       }
+//     }
+//   }
+// }

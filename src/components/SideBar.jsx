@@ -4,32 +4,46 @@ import { Link, NavLink } from 'react-router-dom'
 // styles
 import './SideBar.scss'
 
+const items =
+[
+  {
+    path: '/',
+    icon: 'dashboard',
+    text: 'Browse',
+  },
+  {
+    path: '/setup',
+    icon: 'shopping_cart',
+    text: 'Cart',
+  },
+  {
+    path: '/sessions',
+    icon: 'list',
+    text: 'Previous Sessions',
+  },
+  {
+    path: '/submit',
+    icon: 'add',
+    text: 'Submit Questions',
+  }
+]
+
 export default
 class SideBar extends React.Component {
   render() {
+    const links = items.map(item => (
+      <li styleName='link' key={item.path}>
+        <NavLink to={item.path} exact={true} activeClassName='active'>
+          <i className='material-icons'>{item.icon}</i>
+          <label>{item.text}</label>
+        </NavLink>
+      </li>
+    ))
+
     return (
-      <div className='SideBar'>
-        <div className='logo'>nous</div>
-        <ul>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            <li>
-              <i className='material-icons'>dashboard</i>
-              <label>Browse</label>
-            </li>
-          </NavLink>
-          <NavLink to='/setup' exact={true} activeClassName='active'>
-            <li>
-              <i className='material-icons'>shopping_cart</i>
-              <label>Cart</label>
-            </li>
-          </NavLink>
-          <NavLink to='/submit' exact={true} activeClassName='active'>
-            <li>
-              <i className='material-icons'>add</i>
-              <label>Submit Questions</label>
-            </li>
-          </NavLink>
-        </ul>
+      <div styleName='sidebar'>
+        <div styleName='logo'>nous</div>
+        <ul>{links}</ul>
       </div>
     )
   }

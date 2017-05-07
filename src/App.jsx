@@ -1,6 +1,6 @@
 import React from 'react'
 import Cookies from 'js-cookie'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 // components
 import AppBar        from '~/components/AppBar'
@@ -19,25 +19,28 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className='App'>
+        <div styleName='app'>
           <SideBar />
-          <Route exact path='/' render={(props) =>
-            <HomePage authHandler={this.authHandler}
-              selectedQuestions={this.state.selectedQuestions}
-              updateQuestions={this.updateQuestions}
-              {...props} />} />
-          <Route path='/setup' render={(props) =>
-            <SetupPage authHandler={this.authHandler}
-              selectedQuestions={this.state.selectedQuestions}
-              updateQuestions={this.updateQuestions}
-              {...props} />} />
-          <Route path='/interview' render={(props) =>
-            <InterviewPage authHandler={this.authHandler}
-              selectedQuestions={this.state.selectedQuestions}
-              {...props} />} />
-          <Route path='/submit' render={(props) =>
-            <SubmitPage authHandler={this.authHandler}
-              {...props} />} />
+
+          <Switch>
+            <Route exact path='/' render={(props) =>
+              <HomePage authHandler={this.authHandler}
+                selectedQuestions={this.state.selectedQuestions}
+                updateQuestions={this.updateQuestions}
+                {...props} />} />
+            <Route path='/setup' render={(props) =>
+              <SetupPage authHandler={this.authHandler}
+                selectedQuestions={this.state.selectedQuestions}
+                updateQuestions={this.updateQuestions}
+                {...props} />} />
+            <Route path='/interview' render={(props) =>
+              <InterviewPage authHandler={this.authHandler}
+                selectedQuestions={this.state.selectedQuestions}
+                {...props} />} />
+            <Route path='/submit' render={(props) =>
+              <SubmitPage authHandler={this.authHandler}
+                {...props} />} />
+          </Switch>
         </div>
       </Router>
     )
