@@ -35,7 +35,7 @@ class SideBar extends React.Component {
       <li styleName='link' key={item.path}>
         <NavLink to={item.path} exact={true} activeClassName='active'>
           <i className='material-icons'>{item.icon}</i>
-          <label>{item.text}</label>
+          <p>{item.text}</p>
         </NavLink>
       </li>
     ))
