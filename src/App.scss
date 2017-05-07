@@ -1,26 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
-
-body, * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Roboto', 'Montserrat', 'Arial', sans-serif;
-}
-
-body {
-  background-color:orange;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
-}
+@import 'media';
 
 #react {
   /* styling for making this look good on mobile */
