@@ -23,7 +23,7 @@ class App extends React.Component {
         <Switch>
           <Route path='/login' render={() => this.state.user ? <Redirect to='/browse' /> : <Login />} />
           <Route path='/' exact render={() => <Redirect to='/browse' />} />
-          <Route render={(props) => <Dashboard {...props} />} />
+          <Route render={props => <Dashboard {...props} />} />
         </Switch>
       </div>
       </Router>

@@ -42,7 +42,7 @@ class Dashboard extends React.Component
                     <div styleName='appbar'><AppBar /></div>
 
                     <Switch>
-                        <Route path='/browse/:category?' render={(props) => <BrowsePage {...props} />} />
+                        <Route path='/browse/:category?' render={props => <BrowsePage {...props} />} />
                         <Route path='/cart' render={() => <div>cart</div>} />
                         <Route path='/sessions' render={() => <div>sessions</div>} />
                         <Route path='/submit' render={() => <div>submit</div>} />
