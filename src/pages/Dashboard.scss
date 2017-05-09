@@ -12,20 +12,28 @@
 
     .side {
         width: 260px;
+        min-width: 260px;
         height: 100%;
     }
 
     .main {
         flex-grow: 1;
-        > * { padding: 0px 40px; }
+        height: 100%;
+
+        > * {
+            width: 100%;
+            padding: 0px 40px;
+        }
+        @include flexbox(column, nowrap, flex-start, flex-start);
     }
     .appbar {
         height: 100px;
         margin-bottom: 40px;
         border-bottom: 1px solid #EEEEEE;
     }
-
-    .appbar {
-
+    .content {
+        flex: 1;
+        height: 0px;
+        overflow: auto;
     }
 }

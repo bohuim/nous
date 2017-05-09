@@ -1,69 +1,59 @@
+@import 'media';
+@import 'mixin';
+@import 'colors';
 
-.QuestionForm {
-
-    $borderNormal: #BDBDBD;
-    $borderAccent1: #43A047;
-    $borderAccent2: #66BB6A;
-
-    display: block;
-    position: relative;
-    margin-bottom: 40px;
-
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-
-    > .toolbar {
-        $height: 40px;
-
-        width: 100%;
-        height: $height;
-
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-
-        > .title {
-            color: #424242;
-            padding-left: 4px;
-        }
-
-        > i { 
-            color: #757575;
-            &:hover { color: #e53935; }
-        }
+@media #{$desktop}
+{
+    .form {
+        min-width: 100%;
+        @include flexbox(column, nowrap, flex-start, flex-start);
     }
 
-    > .input {
-        display: block;
-        box-sizing: border-box;
-
-        width: 100%;
-        padding: 8px;
+    .toolbar {
+        min-width: inherit;
         margin-bottom: 16px;
-        &:last-child { margin-bottom: 0px; }
 
-        color: #212121;
-        font-weight: 400;
+        @include flexbox(row, nowrap, space-between, center);
+    }
+    .label {
+        color: #424242;
+        padding-left: 4px;
+
+        font-size: 22px;
+    }
+    .clear {
+        cursor: pointer;
+        font-size: 28px;
+
+        color: #757575;
+        &:hover { color: #e53935; }
+    }
+
+    .question {
+        outline: none;
+        min-width: inherit;
+
+        padding: 16px;
+        margin-bottom: 12px;
+
+        font-size: 20px;
+
+        box-sizing: border-box;
+        border-radius: 8px;
+        border: 1px solid #BDBDBD;
+        &:focus { border-color: $blue700; }
+    }
+
+    .category {
+        outline: none;
+        min-width: inherit;
+        padding: 8px 12px;
+
+        font-size: 18px;
+        color: $blue700;
 
         border: none;
-        appearance: none;
-        box-shadow: none;
-    }
-
-    > textarea[name='question'] {
-        font-size: 16px;
-
-        border-radius: 5px;
-        border: 1px solid $borderNormal;
-        &:focus { border-color: $borderAccent1; }
-    }
-
-    > input[type='text'] {
-        font-size: 14px;
-
-        border-left: 2px solid $borderNormal;
-        &:focus { border-color: $borderAccent2; }
+        border-left: 2px solid #BDBDBD;
+        &:focus { border-color: $blue600; }
     }
 }

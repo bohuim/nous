@@ -6,38 +6,27 @@ import './QuestionForm.scss'
 const questionPlaceholder = 'Type the question here...';
 const categoriesPlaceholder = 'Comma separated categories ex) general, chemistry, ...';
 
-/**
- <QuestionForm key={index}
-               index={index}
-               removeCallback={removeCallback} />
- */
-export default
-class QuestionForm extends React.Component {
-  render() {
-    const index = this.props.index
-    const update = this.props.updateHandler
-    const remove = this.props.removeHandler
-
+export default (props) => {
     return (
-      <li className='QuestionForm'>
-        <div className='toolbar'>
-          <p className='title'>Question #{index + 1}</p>
-          <i className='material-icons' onClick={() => remove(index)}>clear</i>
+        <div styleName='form'>
+            <div styleName='toolbar'>
+                <p styleName='label'>Question #{props.number}</p>
+                <i styleName='clear' className='material-icons' onClick={props.remove}>clear</i>
+            </div>
+
+            <textarea
+                rows='8' cols='48'
+                styleName='question'
+                placeholder='Enter the question here'
+                onChange={e => props.update('question', e.target.value)}
+            />
+
+            <input
+                type='text'
+                styleName='category'
+                placeholder='Give it a category ex) chemical-engineering'
+                onChange={e => props.update('category', e.target.value)}
+            />
         </div>
-
-        <textarea
-          name='question'
-          className='input'
-          rows="8" cols="48"
-          placeholder={questionPlaceholder}
-          onChange={e => update(index, 'question', e.target.value)} />
-
-        <input
-          type='text'
-          className='input'
-          placeholder={categoriesPlaceholder}
-          onChange={e => update(index, 'categories', e.target.value)} />
-      </li>
     )
-  }
 }

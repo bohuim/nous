@@ -3,101 +3,112 @@ import request from 'superagent'
 import { Link, NavLink } from 'react-router-dom'
 
 // components
-import AppBar from '~/components/AppBar'
-import QuestionForm from './QuestionForm.scss'
+import QuestionForm from './QuestionForm'
 
 // styles
 import './SubmitPage.scss'
 
 export default
-class SubmitPage extends React.Component {
-  render() {
-    return (
-      <div className='content'>
-        <AppBar header='Submit New Questions'
-          authHandler={this.props.authHandler} />
-        <div className='SubmitPage page'>
-          <h3>Submit New Questions</h3>
-          <ul ref='formList' className='data'>
-            {this.state.data.map((data, index) =>
-              <QuestionForm
-                key={data.key}
-                index={index}
-                updateHandler={this.update.bind(this)}
-                removeHandler={this.remove.bind(this)} />
-            )}
-          </ul>
+class SumbitPage extends React.Component
+{
+    constructor(props)
+    {
+        super(props)
 
-          <div className='toolbar'>
-            <button onClick={() => this.add()} >Add another</button>
-            <NavLink to='/'>
-              <button>
-                Back
-              </button>
-            </NavLink>
-          <button onClick={() => this.submit()} >Submit</button>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  constructor(props) {
-    super(props)
-    this.key = 1
-    this.state = {
-      data: [{ key: 0,
-               question: '',
-               categories: '' }]
-    }
-  }
-
-  add() {
-    this.setState(prev => ({
-      data: prev.data.concat({
-        key: this.key++,
-        question: '',
-        categories: ''
-      })
-    }))
-  }
-
-  remove(index) {
-    const data = this.state.data
-    if (data.length > 1) {
-      data.splice(index, 1)
-      this.setState({data: data})
-    }
-  }
-
-  update(index, uid, val) {
-    this.state.data[index][uid] = val
-  }
-
-  submit() {
-    for (let i = 0; i < this.state.data.length; i++) {
-      let data = {
-        'TableName' : 'InterviewDB',
-        'Item' : {
-          'Content' : this.state.data[i]['question'],
-          'Category' : this.state.data[i]['categories']
+        this.key = 1
+        this.state = {
+            data: []
         }
-      }
-      data = JSON.stringify(data)
-      request
-        .post('https://x84ch6vh51.execute-api.us-east-1.amazonaws.com/prod/InterviewUpdate')
-        .send(data)
-        .end(function(err, res) {
-          if (err || !res.ok) {
-           console.log(err)
-         } else {
-           this.props.history.push('/')
-         }
-        }.bind(this))
     }
-  }
 
+    componentWillMount()
+    {
+        this.add()
+    }
+
+    add()
+    {
+        this.setState({
+            data: this.state.data.concat({
+                key: this.key++,
+                question: '',
+                category: ''
+            })
+        })
+    }
+
+    remove(index)
+    {
+        const data = this.state.data
+        if (data.length > 1)
+        {
+            data.splice(index, 1)
+            this.setState({data: data})
+        }
+    }
+
+    submit()
+    {
+        const items = this.state.data.filter(item => item.question && item.category)
+        if (items.length === 0)
+            return
+
+        console.log('Sumbitting items: ', items)
+        const payload = {
+            RequestItems: {
+                'NousQuestions': items
+                    .map(i => ({
+                        Question: i.question,
+                        Category: i.category
+                    }))
+                    .map(i => ({
+                        PutRequest: { Item: i }
+                    }))
+            }
+        }
+
+        request
+            .post('https://y7sn9xsm9h.execute-api.us-east-1.amazonaws.com/prod/NousDB')
+            .send(payload)
+            .set('Content-Type', 'application/json')
+            .end((error, response) => {
+                if (error)
+                    return console.log('SubmitPage.submit() - error while posting questions: ', error)
+
+                // We should check response for "UnprocessedItems" and loop the request but... just reset for now.
+                this.key = 0
+                this.setState({data: []})
+                this.add()
+            })
+    }
+
+    render()
+    {
+        const forms = this.state.data.map((data, index) => (
+            <li key={data.key} styleName='form-item'>
+                <QuestionForm 
+                    number={index+1}
+                    remove={() => this.remove(index)}
+                    update={(uid, val) => {this.state.data[index][uid] = val}}
+                />
+            </li>
+        ))
+
+        return (
+            <div styleName='page'>
+                <div styleName='toolbar'>
+                    <button styleName='submit' onClick={() => this.submit()}>Submit!</button>
+                </div>
+
+                <ul styleName='forms'>
+                    {forms}
+
+                    <li styleName='add' onClick={() => this.add()}>
+                        <i className='material-icons'>add</i>
+                        Add Another
+                    </li>
+                </ul>
+            </div>
+        )
+    }
 }
-
-// Helpers
-const range = (n) => Array.from(Array(n).keys())

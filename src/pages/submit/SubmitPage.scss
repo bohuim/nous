@@ -1,4 +1,67 @@
+@import 'media';
+@import 'mixin';
+@import 'colors';
 
+@media #{$desktop}
+{
+    .page {
+        
+    }
+
+    .toolbar {
+        height: 60px;
+        @include flexbox(row, nowrap, flex-end, center);
+    }
+    .submit {
+        outline: none;
+        cursor: pointer;
+
+        top: 0px;
+        position: relative;
+
+        font-size: 18px;
+        border-radius: 3px;
+        padding: 12px 20px;
+
+        color: white;
+        background-color: $color-primary;
+
+        transition: all 100ms ease-out;
+        &:hover { top: -4px; }
+    }
+
+    .forms {
+        width: 100%;
+        min-width: 600px;
+        max-width: 800px;
+        margin: 0px auto;
+        padding-bottom: 40px;
+
+        height: 100%;
+        overflow: auto;
+    }
+    .form-item {
+        margin-top: 40px;
+    }
+    .add {
+        height: 80px;
+        cursor: pointer;
+
+        margin-top: 40px;
+
+        color: $color-primary-lighten;
+        border-radius: 8px;
+        border: 2px dashed $color-primary-lighten;
+        &:hover {
+            color: $color-primary-darken;
+            border-color: $color-primary-darken;
+        }
+
+        @include flexbox(row, nowrap, center, center);
+    }
+}
+
+/*
 .SubmitPage {
     
     width: 640px;
@@ -40,3 +103,4 @@
         }
     }
 }
+*/

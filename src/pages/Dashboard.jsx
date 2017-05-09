@@ -6,6 +6,7 @@ import AppBar  from '~/components/AppBar'
 import SideBar from '~/components/SideBar'
 
 import BrowsePage from '~/pages/browse/BrowsePage'
+import SubmitPage from '~/pages/submit/SubmitPage'
 
 // style
 import './Dashboard.scss'
@@ -41,13 +42,15 @@ class Dashboard extends React.Component
                 <div styleName='main'>
                     <div styleName='appbar'><AppBar /></div>
 
+                    <div styleName='content'>
                     <Switch>
-                        <Route path='/browse' render={props => <BrowsePage {...props} />} />
-                        <Route path='/cart' render={() => <div>cart</div>} />
-                        <Route path='/sessions' render={() => <div>sessions</div>} />
-                        <Route path='/submit' render={() => <div>submit</div>} />
-                        <Route path='*' render={() => <Redirect to='/browse' />}/>
+                        <Route path='/browse'   render={props => <BrowsePage {...props} />} />
+                        <Route path='/cart'     render={props => <div>cart</div>} />
+                        <Route path='/sessions' render={props => <div>sessions</div>} />
+                        <Route path='/submit'   render={props => <SubmitPage {...props} />} />
+                        <Route path='*'         render={props => <Redirect to='/browse' />} />
                     </Switch>
+                    </div>
                 </div>
             </div>
         )
