@@ -1,30 +1,29 @@
 import React from 'react'
-import Cookies from 'js-cookie'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
+import AuthManager from '~/utils/auth.js'
+
 // components
-import Login        from '~/pages/Login'
-import AppBar        from '~/components/AppBar'
-import SideBar       from '~/components/SideBar'
-import HomePage      from '~/pages/home/HomePage'
-import SetupPage     from '~/pages/setup/SetupPage'
-import InterviewPage from '~/pages/interview/InterviewPage'
-import SubmitPage    from '~/pages/submit/SubmitPage'
+import Login     from '~/pages/Login'
+import Dashboard from '~/pages/Dashboard'
 
 // styles
 import './App.scss'
 
-// this is a very cheap way to deal with the appbar - hopefully it'll get fixed later?
-// but right now i don't feel like dealing with react-router to get text to show up.
+export default
 class App extends React.Component {
   render() {
-    return (
+    // Show empty div (temporary) until async is ready.
+    return !this.state.ready ? (<div></div>) :
+    (
       <Router>
       <div styleName='app'>
         {this.state.user ? null : <Redirect to='/login' />}
+
         <Switch>
-          <Route path='/login' render={() => this.state.user ? <Redirect to='/browse' /> : <Login callback={this.login} />} />
-          <Route path='/browse' render={() => <div>browse</div>} />
+          <Route path='/login' render={() => this.state.user ? <Redirect to='/browse' /> : <Login />} />
+          <Route path='/' exact render={() => <Redirect to='/browse' />} />
+          <Route render={(props) => <Dashboard {...props} />} />
         </Switch>
       </div>
       </Router>
@@ -34,64 +33,30 @@ class App extends React.Component {
   constructor(props) {
     super(props)
 
-    this.login = this.login.bind(this)
-    this.logout = this.login.bind(this)
-    this.fetchProfile = this.fetchProfile.bind(this)
-
     this.state = {
-      user: null,
-      selectedQuestions : []
+      ready: false
+      // selectedQuestions : []
     }
+
+    window.auth = null
+    window.user = null
   }
 
   componentDidMount() {
-    window.onAmazonLoginReady = () => { 
-      amazon.Login.setClientId('amzn1.application-oa2-client.719fc6d00eeb472398cf7aadc73cf21d') 
-      amazon.Login.setUseCookie(true)
-    }
-    require('./utils/amazon-login')
-    
-    const token = Cookies.get('amazon_Login_accessToken')
-    if (token)
-      this.fetchProfile(token)
+    window.auth = new AuthManager(this)
   }
 
-  updateQuestions = (questions) => {
-    this.setState({ selectedQuestions : questions })
+  didLogin(user) {
+    console.log('App.didLogin\n\nuser:', user)
+
+    window.user = user
+    this.setState({user: user, ready: true})
   }
 
-  login() {
-    const options = {
-      popup: true,
-      scope: 'profile'
-    }
-    amazon.Login.authorize(options, (response) => {
-      if (response.error)
-        return console.log('Error while getting user access token: ', response.error)
+  didLogout() {
+    console.log('App.didLogout')
 
-      this.fetchProfile(response.access_token)
-    })
-  }
-
-  logout() {
-    amazon.Login.logout()
+    window.user = null
     this.setState({user: null})
   }
-
-  fetchProfile(token) {
-    amazon.Login.retrieveProfile(token, (response) => {
-      if (response.error)
-        return console.log('Error while getting user profile: ', response.error)
-
-      const user = {
-          aaid: response.profile.CustomerId,
-          name: response.profile.Name,
-          email: response.profile.PrimaryEmail
-      }
-      console.log('user: ', user)
-      this.setState({user: user})
-    })
-  }
 }
-
-module.exports = App

@@ -6,6 +6,8 @@ import './Login.scss'
 export default
 class Login extends React.Component {
   render() {
+    const login = window.auth.login || (() => {})
+
     return (
       <div styleName='container'>
         <div styleName='col'>
@@ -14,7 +16,7 @@ class Login extends React.Component {
         </div>
 
         <div styleName='col'>
-          <a styleName='login' onClick={this.props.callback}>Login with Amazon</a>
+          <a styleName='login' onClick={() => login()} >Login with Amazon</a>
         </div>
       </div>
     )

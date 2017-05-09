@@ -7,12 +7,12 @@ import './SideBar.scss'
 const items =
 [
   {
-    path: '/',
+    path: '/browse',
     icon: 'dashboard',
     text: 'Browse',
   },
   {
-    path: '/setup',
+    path: '/cart',
     icon: 'shopping_cart',
     text: 'Cart',
   },
@@ -32,12 +32,14 @@ export default
 class SideBar extends React.Component {
   render() {
     const links = items.map(item => (
+
       <li styleName='link' key={item.path}>
-        <NavLink to={item.path} exact={true} activeClassName='active'>
+        <NavLink to={item.path} activeClassName='active'>
           <i className='material-icons'>{item.icon}</i>
           <p>{item.text}</p>
         </NavLink>
       </li>
+
     ))
 
     return (

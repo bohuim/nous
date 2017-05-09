@@ -5,7 +5,7 @@
 @media #{$desktop}
 {
     .sidebar {
-        width: 220px;
+        width: 100%;
         height: 100%;
         @include flexbox(column, nowrap, flex-start, center);
 
@@ -14,21 +14,21 @@
     }
 
     .logo {
-        font-size: 52px;
-        margin-top: 16px;
+        font-size: 60px;
+        margin-top: 8px;
     }
 
     ul {
         width: 100%;
-        margin-top: 28px;
-
-        li { margin-bottom: 12px; }
-        li:last-child { margin: 0px; }
+        margin-top: 20px;
     }
 
     .link {
         height: 40px;
         padding: 0px 8px;
+
+        margin: 12px 0px;
+        &:last-child { margin-bottom: 0px; }
         
         a {
             height: 100%;
@@ -40,12 +40,12 @@
                 border-radius: 3px;
                 background-color: $color_primary_darken;
             }
-        }
 
-        i { font-size: 24px; }
-        p {
-            margin-left: 16px;
-            font-size: 18px;
+            i { font-size: 24px; }
+            p {
+                margin-left: 16px;
+                font-size: 20px;
+            }
         }
     }
 }

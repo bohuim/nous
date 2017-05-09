@@ -1,0 +1,17 @@
+@import 'media';
+@import 'mixin';
+
+@media #{$desktop}
+{
+    .page {
+
+    }
+
+    .toolbar {
+
+    }
+
+    .content {
+
+    }
+}
