@@ -4,20 +4,31 @@ Nous
 ---
 Interview simulator for Alexa with web integration.
 
-### Project
-This project uses [`React`](https://github.com/facebook/react) for the web client, and [`alexa-app`](https://github.com/alexa-js/alexa-app) framework for the Alexa skill.  ## 
-The react related files are at the upper-most level, with Alexa files under `/alexa/nous`.
+### Domain
+There is no dedicated domain and server for the site, as it needs a ssl certificate (which costs money).  
+To run and test locally, follow the steps below.
 
-**NOTE**: `node_modules` are not included in the repo, so run the `get-modules` script described below.
+### Running Locally
+To run this project, you'll need `node >= 6.10` and `npm >= 3.3.10`  
+Go ahead and start by install the dependencies
+```sh
+npm install
+```
 
----
+Run the local `webpack-dev-server` with the following script
+```sh
+npm run start
+```
 
-### Useful Scripts
-Run all scripts with `npm run <script>`
-- `get-modules` - runs `npm install` in the outter and `alexa/nous` directories
-- Web
-    - `start` - dev site at `localhost:3000`
-    - `surge` - build the site and trigger `surge` for domain `nous.surge.sh`
-- Alexa
-    - `alexa` - start the alexa app tester UI at `localhost:8000/alexa/nous`
-    - `lint`  - included since `alexa-app` doesn't come with a linter
+Now head over `https://localhost:3000/`  
+
+Note that this **will** give an untrusted site, because we don't have valid certificate.  
+The https protocol is required for Amazon login.
+
+Basic steps:
+- service requires an Amazon account
+- to start a mock interview, browse the categories and add questions to your cart
+- fire up the `Nous Alexa skill` from an Alexa device and say 'yes'
+- this triggers a notification on the web portal
+- from your `Cart`, press the `Start Interview` button to start
+- after the session, you can review the session from `Previous Sessions`
