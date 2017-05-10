@@ -25,7 +25,7 @@ class BrowsePage extends React.Component
         if (window.dashboard)
             window.dashboard.setTitle('Browse')
 
-        if (window.questionsByCategory)
+        if (window.questionsByCategory && !window.dirty)
             return this.setState({ready: true})
 
         db.fetchQuestions()

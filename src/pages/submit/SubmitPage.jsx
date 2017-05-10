@@ -82,6 +82,8 @@ class SumbitPage extends React.Component
                 this.key = 0
                 this.setState({data: []})
                 this.add()
+
+                window.dirty = true
             })
     }
 
