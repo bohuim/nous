@@ -40,7 +40,7 @@ class SessionsPage extends React.Component
                 <ul styleName='session'>
                 {
                     item.questions.map((question, index) => (
-                        <div styleName='set'>
+                        <div key={`${item.timestamp}, ${index}`} styleName='set'>
                             <p styleName='question'>{question}</p>
                             <p styleName='answer'>{item.answers[index]}</p>
                         </div>
