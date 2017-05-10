@@ -4,24 +4,34 @@
 
 @media #{$desktop}
 {
-    .loading {
-        color: #757575;
+    .page {
+
+    }
+
+    .toolbar {
+        @include flexbox(row, nowrap, space-between, center);
+    }
+    .count {
         font-size: 22px;
     }
+    .start {
+        cursor: pointer;
 
-    .error {
-        color: #757575;
-        font-size: 24px;
+        padding: 12px 16px;
+        font-size: 18px;
+
+        color: white;
+        border-radius: 3px;
+        background-color: $blue600;
     }
-
-    .page {
-        
+    .start[disabled] {
+        cursor: default;
+        background-color: #E0E0E0;
     }
 
     .content {
 
     }
-
     .item {
         padding: 16px 12px;
         border-bottom: 1px solid #EEEEEE;
@@ -29,12 +39,9 @@
     }
     .question {
         font-size: 20px;
+        margin-bottom: 16px;
     }
-
-    .menu {
-        
-    }
-    .action {
+    .remove {
         cursor: pointer;
 
         width: fit-content;

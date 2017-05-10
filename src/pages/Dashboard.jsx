@@ -7,6 +7,7 @@ import SideBar from '~/components/SideBar'
 
 import BrowsePage    from '~/pages/browse/BrowsePage'
 import QuestionsPage from '~/pages/browse/QuestionsPage'
+import CartPage      from '~/pages/cart/CartPage'
 import SubmitPage    from '~/pages/submit/SubmitPage'
 
 // style
@@ -37,7 +38,8 @@ class Dashboard extends React.Component
         window.cart = {
             add: this.add.bind(this),
             remove: this.remove.bind(this),
-            contains: this.contains.bind(this)
+            contains: this.contains.bind(this),
+            getItems: () => Array.from(selectedQuestions)
         }
 
         window.dashboard = {
@@ -91,11 +93,11 @@ class Dashboard extends React.Component
 
                     <div styleName='content'>
                     <Switch>
-                        <Route path='/browse' exact     render={props => <BrowsePage {...props} />} />
+                        <Route path='/browse' exact     render={props => <BrowsePage    {...props} />} />
                         <Route path='/browse/:category' render={props => <QuestionsPage {...props} />} />
-                        <Route path='/cart'             render={props => <div>cart</div>} />
+                        <Route path='/cart'             render={props => <CartPage      {...props} />} />
                         <Route path='/sessions'         render={props => <div>sessions</div>} />
-                        <Route path='/submit'           render={props => <SubmitPage {...props} />} />
+                        <Route path='/submit'           render={props => <SubmitPage    {...props} />} />
                         <Route path='*'                 render={props => <Redirect to='/browse' />} />
                     </Switch>
                     </div>

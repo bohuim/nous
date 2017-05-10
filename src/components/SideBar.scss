@@ -52,12 +52,12 @@
         }
     }
 
-    $side: 32px;
+    $side: 28px;
     .count {
         display: block;
         position: absolute;
-        top: 4px;
-        right: 4px;
+        top: 6px;
+        right: 6px;
 
         height: $side;
         min-width: $side;
