@@ -1,0 +1,37 @@
+@import 'media';
+@import 'mixin';
+@import 'colors';
+
+@media #{$desktop}
+{
+    .page {
+
+    }
+
+    .item {
+        padding: 20px 0px;
+        border-bottom: 1px solid #EEEEEE;
+        &:last-child { border-bottom: none; }
+    }
+    .time {
+        font-size: 16px;
+        color: #757575;
+    }
+    .session {
+        margin-top: 12px;
+    }
+
+    .set {
+        margin-bottom: 28px;
+        &:last-child { margin-bottom: none; }
+    }
+    .question {
+        font-size: 20px;
+    }
+    .answer {
+        margin-top: 12px;
+        padding-left: 16px;
+
+        font-size: 18px;
+    }
+}

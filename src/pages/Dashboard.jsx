@@ -8,6 +8,7 @@ import SideBar from '~/components/SideBar'
 import BrowsePage    from '~/pages/browse/BrowsePage'
 import QuestionsPage from '~/pages/browse/QuestionsPage'
 import CartPage      from '~/pages/cart/CartPage'
+import SessionsPage  from '~/pages/sessions/SessionsPage'
 import SubmitPage    from '~/pages/submit/SubmitPage'
 
 // style
@@ -71,7 +72,7 @@ class Dashboard extends React.Component
                         <Route path='/browse' exact     render={props => <BrowsePage    {...props} />} />
                         <Route path='/browse/:category' render={props => <QuestionsPage {...props} />} />
                         <Route path='/cart'             render={props => <CartPage      {...props} standby={this.state.standby} start={() => this.startInteview()} />} />
-                        <Route path='/sessions'         render={props => <div>sessions</div>} />
+                        <Route path='/sessions'         render={props => <SessionsPage  {...props} />} />
                         <Route path='/submit'           render={props => <SubmitPage    {...props} />} />
                         <Route path='*'                 render={props => <Redirect to='/browse' />} />
                     </Switch>

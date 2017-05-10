@@ -10,7 +10,7 @@ export default
         {
             request
                 .get(endpoint)
-                .query({TableName: 'NousQuestions'})
+                .query({ TableName: 'NousQuestions' })
                 .end((error, response) => {
                     if (error)
                         return reject(error)
@@ -23,4 +23,29 @@ export default
                 })
         })
     },
+
+    fetchSessions: function(aaid)
+    {
+        return new Promise((resolve, reject) =>
+        {
+            request
+                .get(endpoint)
+                .query({ TableName: 'NousSessions' })
+                .end((error, response) => {
+                    if (error)
+                        return reject(error)
+
+                    const items = response.body.Items
+                        .filter(i => i.AAID === aaid)
+                        .map(i => ({
+                            timestamp: i.Timestamp,
+                            questions: i.Questions,
+                            answers: i.Answers
+                        }))
+                        .sort((a, b) => b.timestamp - a.timestamp)
+
+                    resolve(items)
+                })
+        })
+    }
 }
