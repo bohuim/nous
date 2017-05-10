@@ -36,7 +36,10 @@ class SideBar extends React.Component {
       <li styleName='link' key={item.path}>
         <NavLink to={item.path} activeClassName='active'>
           <i className='material-icons'>{item.icon}</i>
-          <p>{item.text}</p>
+          <p>
+            {item.text}
+            {item.text !== 'Cart' ? null : (<span styleName='count'>{this.props.count}</span>)}
+          </p>
         </NavLink>
       </li>
 

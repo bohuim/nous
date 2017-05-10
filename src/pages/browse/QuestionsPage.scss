@@ -1,0 +1,58 @@
+@import 'media';
+@import 'mixin';
+@import 'colors';
+
+@media #{$desktop}
+{
+    .loading {
+        color: #757575;
+        font-size: 22px;
+    }
+
+    .error {
+        color: #757575;
+        font-size: 24px;
+    }
+
+    .page {
+        
+    }
+
+    .content {
+
+    }
+
+    .item {
+        padding: 16px 12px;
+        border-bottom: 1px solid #EEEEEE;
+        &:last-child { border-bottom: none; }
+    }
+    .question {
+        font-size: 20px;
+    }
+
+    .menu {
+
+    }
+    .action {
+        cursor: pointer;
+
+        width: fit-content;
+        padding: 8px 12px 8px 8px;
+
+        color: $blue600;
+        border-radius: 3px;
+        @include flexbox(row, nowrap, flex-start, center);
+
+        &:hover {
+            color: white;
+            background-color: $blue500;
+        }
+
+        i { font-size: 20px; }
+        span {
+            margin-left: 4px;
+            font-size: 16px;
+        }
+    }
+}

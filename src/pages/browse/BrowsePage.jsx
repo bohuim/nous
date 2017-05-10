@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { groupBy as _groupBy } from 'lodash'
 
-import request from 'superagent'
+import db from '~/utils/db'
 import pubnub from '~/utils/pubnub'
 
 import './BrowsePage.scss'
@@ -15,49 +16,52 @@ class BrowsePage extends React.Component
 
         this.state = {
             search: '',
-            categories: []
+            ready: false
         }
     }
 
     componentWillMount()
     {
-        request
-        .get('https://y7sn9xsm9h.execute-api.us-east-1.amazonaws.com/prod/NousDB')
-        .query({TableName: 'NousCategories'})
-        .end((error, response) => {
-            if (error)
-                return console.log('BrowsePage.componentWillMount() - error while fetching categories: ', error)
+        if (window.dashboard)
+            window.dashboard.setTitle('Browse')
 
-            const categories = 
-                response.body.Items
-                .map(item => ({category: item.Category, count: item.Count}))
+        if (window.questionsByCategory)
+            return this.setState({ready: true})
 
-            this.setState({categories: categories})
+        db.fetchQuestions()
+        .then(questions => {
+            window.questionsByCategory = _groupBy(questions, 'category')
+
+            this.setState({ready: true})
         })
+        .catch(error => console.log('BrowsePage.componentWillMount() - ', error))
     }
 
     render()
     {
-        const items = 
-            this.state.categories
-            .filter(item => item.category.includes(this.state.search))
-            .map(item => (
-                <li key={item.category} styleName='item'>
-                <Link to={'/browse/' + item.category} styleName='item-link'>
-                    <span styleName='category'>{'#' + item.category}</span>
-                    <span styleName='count'>{`${item.count} questions`}</span>
+        if (!this.state.ready)
+            return <div styleName='loading'>getting categories...</div>
+
+        const group = window.questionsByCategory
+        const categories = Object.keys(group)
+            .filter(c => c.includes(this.state.search))
+            .map(c => (
+                <li key={c} styleName='item'>
+                <Link to={'/browse/' + c} styleName='item-link'>
+                    <span styleName='category'>{'#' + c}</span>
+                    <span styleName='count'>{`${group[c].length} questions`}</span>
                 </Link>
                 </li>
             ))
 
         return (
             <div styleName='page'>
-                <input styleName='searchbar'
+                <input className='global--searchbar'
                        value={this.state.search}
                        placeholder='search for a category...'
                        onChange={e => this.setState({search: e.target.value})} />
 
-                <ul styleName='content'>{items}</ul>
+                <ul styleName='content'>{categories}</ul>
             </div>
         )
     }

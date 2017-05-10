@@ -4,11 +4,15 @@
 
 @media #{$desktop}
 {
+    .loading {
+        
+    }
+
     .page {
         @include flexbox(column, nowrap, flex-start, flex-start);
     }
 
-    .searchbar {
+    :global(.global--searchbar) {
         width: 100%;
 
         font-size: 22px;

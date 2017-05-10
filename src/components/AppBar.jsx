@@ -37,7 +37,7 @@ class AppBar extends React.Component {
 
     return (
       <div styleName='appbar'>
-        <h3>Temp section title</h3>
+        <h3>{this.props.title}</h3>
 
         <div styleName='profile'>
           <p styleName='name' onClick={() => this.toggleMenu()}>

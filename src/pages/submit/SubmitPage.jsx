@@ -23,6 +23,9 @@ class SumbitPage extends React.Component
 
     componentWillMount()
     {
+        if (window.dashboard)
+            window.dashboard.setTitle('Submit Questions')
+
         this.add()
     }
 
