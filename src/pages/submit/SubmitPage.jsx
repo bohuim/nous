@@ -62,7 +62,7 @@ class SumbitPage extends React.Component
                 'NousQuestions': items
                     .map(i => ({
                         Question: i.question,
-                        Category: i.category
+                        Category: i.category.toLowerCase()
                     }))
                     .map(i => ({
                         PutRequest: { Item: i }
