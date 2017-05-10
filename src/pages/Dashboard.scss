@@ -19,12 +19,32 @@
     .main {
         flex-grow: 1;
         height: 100%;
+        position: relative;
 
         > * {
             width: 100%;
             padding: 0px 40px;
         }
         @include flexbox(column, nowrap, flex-start, flex-start);
+    }
+    .alert {
+        top: -60px;
+        left: 0px;
+        right: 0px;
+        margin: 0px auto;
+        position: absolute;
+
+        $height: 40px;
+        height: $height;
+        width: fit-content;
+        padding: 8px ($height / 2);
+        border-radius: ($height / 2);
+
+        color: white;
+        background-color: #ef5350;
+        
+        transition: top 100ms ease-out;
+        &.active { top: 16px; }
     }
     .appbar {
         height: 100px;

@@ -49,7 +49,13 @@ class CartPage extends React.Component
             <div styleName='page'>
                 <div styleName='toolbar'>
                     <p styleName='count'>Selected: {this.state.items.length}</p>
-                    <button styleName='start' disabled>Start the Interview!</button>
+                    <button 
+                        styleName='start' 
+                        disabled={!this.props.standby}
+                        onClick={this.props.start}
+                    >
+                        Start the Interview!
+                    </button>
                 </div>
 
                 <ul styleName='content'>{items}</ul>
